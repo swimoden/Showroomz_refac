@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorWhite"
+            >
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:lineSpacingMultiplier="0.8"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/verify_mobile_nbr"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/msg_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:lineSpacingMultiplier="0.8"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/msg_verify"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_text" />
+
+            <View
+                android:id="@+id/view_separator"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_margin="4dp"
+                android:background="@color/colorGrayRow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/msg_text" />
+
+            <Button
+
+                android:layout_margin="8dp"
+                android:id="@+id/get_code"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:background="@drawable/filled_red"
+                android:text="@string/get_code"
+                android:textColor="@color/_white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_separator" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/verification_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorWhite"
+            android:paddingBottom="10dp"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/title_verification_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:lineSpacingMultiplier="0.8"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:text="@string/verify_mobile_nbr"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.mukesh.OtpView
+                android:id="@+id/otp_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:inputType="number"
+                android:itemBackground="@color/colorWhite"
+                android:textColor="@color/colorBlack"
+
+                app:lineColor="@color/colorPrimary"
+                app:viewType="line"
+                app:flow_horizontalAlign="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/title_verification_text"
+                />
+
+            <View
+                android:id="@+id/view_verification_separator"
+                android:layout_width="0dp"
+                android:layout_height="0.5dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/colorGrayRow"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/otp_view"
+                />
+
+            <Button
+                android:id="@+id/resend_code"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@color/transparent"
+                android:text="@string/resend_code"
+
+                app:layout_constraintEnd_toStartOf="@+id/verify_code"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_verification_separator"
+                app:layout_constraintWidth_percent="0.5" />
+
+            <Button
+                android:id="@+id/verify_code"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@color/transparent"
+                android:text="@string/verify_code"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/view_verification_separator"
+                app:layout_constraintWidth_percent="0.5" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <ProgressBar
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_gravity="center"
+
+            />
+        <RelativeLayout
+            android:id="@+id/exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            android:layout_marginTop="10dp">
+
+            <ImageButton
+                android:id="@+id/exit_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/circle_red_background"
+                android:padding="5dp"
+                android:src="@drawable/ic_close"
+                android:tint="@color/colorWhite" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</layout>

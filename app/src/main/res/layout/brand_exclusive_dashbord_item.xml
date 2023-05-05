@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="brand"
+            type="com.kuwait.showroomz.model.simplifier.BrandSimplifier" />
+        <import
+            alias="v"
+            type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+
+            android:id="@+id/shapeableImageView"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:imageUrl="@{brand.image}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            android:scaleType="fitXY">
+
+
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <LinearLayout
+            android:background="@drawable/filled_overlay_dark"
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shapeableImageView">
+
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imageView"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:imageUrl="@{brand.logo}"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.PILL"
+                android:background="@drawable/filled_white"
+                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{brand.name}"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/cairo_bold"
+                android:visibility="@{TextUtils.isEmpty(brand.name) ? v.GONE : v.VISIBLE}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{brand.desc}"
+                android:textSize="16sp"
+                android:fontFamily="@font/cairo_regular"
+                android:textColor="@color/colorWhite"
+                android:visibility="@{TextUtils.isEmpty(brand.desc) ? v.INVISIBLE : v.VISIBLE}" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

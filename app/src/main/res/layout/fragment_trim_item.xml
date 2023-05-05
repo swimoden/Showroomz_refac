@@ -1,0 +1,33 @@
+<layout>
+
+    <data>
+        <variable
+            name="model"
+            type="com.kuwait.showroomz.model.simplifier.ModelSimplifier" />
+        <variable
+            name="trim"
+            type="com.kuwait.showroomz.model.simplifier.TrimSimplifier" />
+    </data>
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        tools:context="com.kuwait.showroomz.view.fragment.TrimItemFragment"
+        >
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/trim_content_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:model="@{model}"
+            android:trimAdapter="@{trim.specs}"
+
+            >
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </FrameLayout>
+</layout>

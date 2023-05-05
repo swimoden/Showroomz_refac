@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "736569193170",
+    "firebase_url": "https://showroomzprod.firebaseio.com",
+    "project_id": "showroomzprod",
+    "storage_bucket": "showroomzprod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:736569193170:android:53208de151c6fba4",
+        "android_client_info": {
+          "package_name": "com.kuwait.showroomz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "736569193170-mn58f6qlgd30tuim4b9eouelmc4atqph.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCsvOugWcyH8T1ZILoJVPHh6ADL1j_R1k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "736569193170-5jap38e8dqbv44931amvmhbmpubume4k.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "736569193170-f5rgqgrfo870r79fujfpnvotn3ae359v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.showroom.Showroomz"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

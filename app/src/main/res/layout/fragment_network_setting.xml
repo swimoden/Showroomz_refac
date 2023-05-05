@@ -1,0 +1,176 @@
+<layout>
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite"
+        tools:context="com.kuwait.showroomz.view.fragment.NetworkSettingFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintBottom_toTopOf="@id/guideline"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20sp"
+                android:fontFamily="@font/cairo_bold"
+                android:text="@string/no_internet_connection"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/description_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/cairo_regular"
+                android:lineSpacingMultiplier="0.6"
+                android:text="@string/oops_slow_or_no_internet_connection_please_try_again"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_txt" />
+
+            <ImageView
+                android:id="@+id/no_internet_icon"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:src="@mipmap/no_internet_icon"
+                app:layout_constraintBottom_toTopOf="@id/try_again"
+                app:layout_constraintEnd_toStartOf="@id/no_internet_art"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_txt" />
+
+            <ImageView
+                android:id="@+id/no_internet_art"
+                android:layout_width="170dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+                android:src="@mipmap/no_internet_art"
+                app:layout_constraintBottom_toTopOf="@id/try_again"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toEndOf="@id/no_internet_icon"
+                app:layout_constraintTop_toBottomOf="@id/description_txt" />
+
+            <Button
+                android:id="@+id/try_again"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/filled_yellow"
+                android:fontFamily="@font/cairo_regular"
+                android:text="@string/try_again"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/offline_mode_container"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/guideline">
+
+            <TextView
+                android:id="@+id/title_offline_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="20sp"
+                android:fontFamily="@font/cairo_bold"
+                android:text="@string/you_can_still_try_offline_model"
+                android:textColor="@color/colorPrimary"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/description_offline_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="20dp"
+
+                android:fontFamily="@font/cairo_regular"
+                android:lineSpacingMultiplier="0.6"
+                android:text="@string/offline_mode_allws_you_to_visit_all_categories_and_model_details"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_offline_txt" />
+
+            <ImageView
+                android:id="@+id/no_internet_icon_offline_"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:layout_margin="20dp"
+                android:src="@mipmap/offline_mode_icon"
+                app:layout_constraintBottom_toTopOf="@id/offline_mode"
+                app:layout_constraintEnd_toStartOf="@id/no_internet_art_offline_"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/description_offline_txt" />
+
+            <ImageView
+                android:id="@+id/no_internet_art_offline_"
+                android:layout_width="170dp"
+                android:layout_height="0dp"
+                android:layout_marginBottom="10dp"
+
+                android:src="@mipmap/offline_mode_art"
+                app:layout_constraintBottom_toTopOf="@id/offline_mode"
+                app:layout_constraintEnd_toEndOf="parent"
+
+                app:layout_constraintStart_toEndOf="@id/no_internet_icon_offline_"
+                app:layout_constraintTop_toBottomOf="@id/description_offline_txt" />
+
+            <Button
+                android:id="@+id/offline_mode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/filled_black"
+                android:fontFamily="@font/cairo_regular"
+                android:text="@string/offline_mode"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

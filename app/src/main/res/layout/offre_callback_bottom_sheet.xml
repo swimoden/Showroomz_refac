@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kuwait.showroomz.viewModel.ModelOffersVM" />
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorWhite"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:lineSpacingMultiplier="0.8"
+                android:text="@string/please_add_your_information_to_be_contacted"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/full_name_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@{viewModel.nameError?@color/colorPrimary:@color/colorGrayDark}"
+                android:fontFamily="@font/cairo_regular"
+                android:hint="@string/full_name"
+                android:inputType="textPersonName"
+                android:lineSpacingMultiplier="0.8"
+                android:text="@={viewModel.fullNameField}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/title_text" />
+
+            <EditText
+                android:id="@+id/phone_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:backgroundTint="@{viewModel.phoneError?@color/colorPrimary:@color/colorGrayDark}"
+                android:fontFamily="@font/cairo_regular"
+                android:hint="@string/phone_number"
+                android:inputType="phone"
+                android:lineSpacingMultiplier="0.8"
+                android:text="@={viewModel.phoneNumber}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/full_name_edit" />
+            <EditText
+                android:id="@+id/civilId_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:fontFamily="@font/cairo_regular"
+                android:hint="@string/civil_id_number"
+                android:inputType="phone"
+                android:lineSpacingMultiplier="0.8"
+                android:backgroundTint="@{viewModel.civilIdError?@color/colorPrimary:@color/colorGrayDark}"
+                android:text="@={viewModel.civilId}"
+                android:visibility="@{viewModel.isCivilIdMandatory?view.VISIBLE:view.GONE}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/phone_edit" />
+            <!--<ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:visibility="@{viewModel.callbackLoading?view.VISIBLE:view.GONE}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"-->
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/transparent">
+
+            <ImageButton
+                android:id="@+id/exit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/circle_red_background"
+                android:padding="10dp"
+                android:src="@drawable/ic_close"
+                android:tint="@color/colorWhite" />
+
+            <ImageButton
+                android:id="@+id/ok_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="30dp"
+                android:background="@drawable/circle_black"
+                android:onClick="@{()->viewModel.requestCallback()}"
+                android:padding="10dp"
+                android:src="@drawable/ic_baseline_check_24"
+                android:tint="@color/colorWhite" />
+        </RelativeLayout>
+    </FrameLayout>
+
+</layout>

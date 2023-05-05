@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="address"
+            type="com.kuwait.showroomz.model.data.UserAddress" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+
+        android:layout_marginStart="20dp"
+        android:padding="7dp">
+        <TextView
+            android:id="@+id/address_type_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cairo_semi_bold"
+
+            android:lineSpacingMultiplier="0.8"
+            android:text="@{address.type}"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/address_txt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cairo_semi_bold"
+            android:layout_marginTop="5dp"
+            android:lines="3"
+            android:maxLines="3"
+            android:lineSpacingMultiplier="0.8"
+            android:text="@{address.address}"
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@id/address_type_txt"
+           />
+
+        <TextView
+            android:id="@+id/tem_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/outline_gray"
+            android:fontFamily="@font/cairo_regular"
+            android:paddingTop="3dp"
+            android:paddingBottom="3dp"
+            android:text="@string/choose_this_address"
+            android:textAllCaps="true"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            android:textColor="@color/colorBlack"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address_txt" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

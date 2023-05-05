@@ -1,0 +1,1510 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashFragment">
+
+
+    <fragment
+        android:id="@+id/networkFragment"
+        android:name="com.kuwait.showroomz.view.fragment.NetworkSettingFragment"
+        android:label="NetworkSettingFragment">
+        <action
+            android:id="@+id/action_networkFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.kuwait.showroomz.view.fragment.SplashFragment"
+        android:label="SplashFragment">
+        <action
+            android:id="@+id/action_show_dashbord"
+            app:destination="@id/dashboardFragment"
+            app:enterAnim="@android:anim/fade_in"
+
+            />
+
+    </fragment>
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.kuwait.showroomz.view.fragment.DashboardFragment"
+        android:label="DashboardFragment"
+
+
+        >
+        <action
+            android:id="@+id/reload_fragment"
+            app:destination="@id/dashboardFragment" />
+        <action
+            android:id="@+id/action_show_customize_dashboard"
+            app:destination="@id/customizeDashboardFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_show_models_by_brand_id"
+            app:destination="@id/modelFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/aactionShowModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_show_brands_by_category"
+            app:destination="@id/brandsFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+
+            />
+        <action
+            android:id="@+id/action_show_profile"
+            app:destination="@id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+
+            />
+        <action
+            android:id="@+id/action_show_login_fragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true"
+
+            />
+        <action
+            android:id="@+id/showFinanceCallbackItem"
+            app:destination="@id/financeCallbackItemFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showTestDriveDetails"
+            app:destination="@id/testDriveDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showFavoriteList"
+            app:destination="@+id/favoriteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showTerms"
+            app:destination="@+id/termsConditionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showAboutApp"
+            app:destination="@+id/aboutAppFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showContactUs"
+            app:destination="@+id/contactUsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showRequestAmount"
+            app:destination="@+id/request_amountFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/brandsFragment2"
+        android:name="com.kuwait.showroomz.view.fragment.BrandsFragment"
+        android:label="BrandsFragment">
+        <argument
+            android:name="cat"
+            app:argType="com.kuwait.showroomz.model.data.Category"
+            app:nullable="true"
+            />
+        <argument
+            android:name="catChild"
+            app:argType="com.kuwait.showroomz.model.data.Category"
+            app:nullable="true" />
+        <argument
+            android:name="slug"
+            app:argType="string"
+            app:nullable="true"/>
+        <action
+            android:id="@+id/action_show_models_by_brand_id"
+            app:destination="@id/modelFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_show_location"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigate_to_filterFragment"
+            app:destination="@id/filterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigate_to_search_fragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigate_to_appraisal_fragment"
+            app:destination="@id/yourCarDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showLogin"
+            app:destination="@+id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/modelFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ModelFragment"
+        android:label="ModelFragment">
+        <argument
+            android:name="brand"
+            app:argType="com.kuwait.showroomz.model.data.Brand"
+            app:nullable="true"/>
+        <argument
+            android:name="slug"
+            app:argType="string"
+            app:nullable="true"/>
+        <action
+            android:id="@+id/acttion_show_locations_by_brand_Id"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/aactionShowModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigate_to_filterFragment"
+            app:destination="@id/filterFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_navigate_to_search_fragment"
+            app:destination="@id/searchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="com.kuwait.showroomz.view.fragment.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps">
+        <argument
+            android:name="brandataId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="brand"
+            app:argType="com.kuwait.showroomz.model.data.Brand"
+            app:nullable="true" />
+        <argument
+            android:name="ids"
+            app:argType="string[]" />
+    </fragment>
+    <fragment
+        android:id="@+id/modelDetailsFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ModelDetailFragment"
+        android:label="fragment_model_details"
+        tools:layout="@layout/fragment_model_details">
+        <action
+            android:id="@+id/showVideoFragment"
+            app:destination="@id/videoFragment"
+            app:enterAnim="@anim/slide_up"
+            app:exitAnim="@anim/stationary"
+            app:popEnterAnim="@anim/stationary"
+            app:popExitAnim="@anim/slide_down" />
+        <action
+            android:id="@+id/actionShowYourCarDetailsFragment"
+            app:destination="@id/yourCarDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowModelImage"
+            app:destination="@id/modelImageFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showLogin"
+            app:destination="@+id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowBookNowForRent"
+            app:destination="@id/bookNowRentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowBook"
+            app:destination="@id/bookNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowBuyNow"
+            app:destination="@id/buyNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowTestDriveDateReservationFragment"
+            app:destination="@id/testDriveDateFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowFinance"
+            app:destination="@id/financeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowModelOffers"
+            app:destination="@id/modelOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showCompare"
+            app:destination="@id/compareFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model"
+            app:nullable="true"/>
+        <argument
+            android:name="id"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="slug"
+            app:argType="string"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/filterFragment"
+        android:name="com.kuwait.showroomz.view.fragment.FilterFragment"
+        android:label="fragment_filter"
+        tools:layout="@layout/fragment_filter">
+
+        <argument
+            android:name="category"
+            app:argType="com.kuwait.showroomz.model.data.Category" />
+        <argument
+            android:name="categoryParent"
+            app:argType="com.kuwait.showroomz.model.data.Category" />
+        <action
+            android:id="@+id/actionShowFilterModels"
+            app:destination="@id/FilterResultFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popUpToInclusive="true" />
+        <!--app:popExitAnim="@anim/slide_out_right"
+        app:popUpTo="@id/filterFragment"-->
+        <action
+            android:id="@+id/action_filterFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_right"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/modelImageFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ModelImageFragment"
+        android:label="fragment_model_image"
+        tools:layout="@layout/fragment_model_image">
+        <argument
+            android:name="isInterior"
+            app:argType="java.lang.Boolean" />
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model" />
+    </fragment>
+    <fragment
+        android:id="@+id/FilterResultFragment"
+        android:name="com.kuwait.showroomz.view.fragment.FilterResultFragment"
+        android:label="fragment_filter_result">
+        <argument
+            android:name="modelsResult"
+            app:argType="com.kuwait.showroomz.model.data.FilterAttributes" />
+        <action
+            android:id="@+id/aactionShowModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_FilterResultFragment_to_brandsFragment2"
+            app:destination="@id/brandsFragment2"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/financeFragment"
+        android:name="com.kuwait.showroomz.view.fragment.FinanceFragment"
+        android:label="financeFragment"
+        tools:layout="@layout/fragment_finance">
+
+        <argument
+            android:name="trim"
+            app:argType="com.kuwait.showroomz.model.simplifier.TrimSimplifier"
+            app:nullable="true" />
+        <argument
+            android:name="bank"
+            app:argType="com.kuwait.showroomz.model.data.Bank"
+            app:nullable="true" />
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model" />
+        <action
+            android:id="@+id/showCallbackBank"
+            app:destination="@+id/applyForFinance"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showApplyForFinanceStepOne"
+            app:destination="@+id/applyForFinanceStepOne"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showLogin"
+            app:destination="@+id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/financeCallbackItemFragment"
+        android:name="com.kuwait.showroomz.view.fragment.FinanceCallbackItemFragment"
+        android:label="FinanceCallbackItemFragment"
+        tools:layout="@layout/fragment_finance_callback_item">
+
+
+        <argument
+            android:name="callback"
+            app:argType="com.kuwait.showroomz.model.data.Callback" />
+
+        <action
+            android:id="@+id/showRequestDetail"
+            app:destination="@+id/financeRequestDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/modelOfferFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ModelOffersFragment"
+        android:label="modelOfferFragment"
+        tools:layout="@layout/fragment_model_offers">
+
+
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.simplifier.ModelSimplifier" />
+        <argument
+            android:name="fromBuyNow"
+            app:argType="boolean" />
+        <argument
+            android:name="offer"
+            app:argType="com.kuwait.showroomz.model.data.Offer"
+            app:nullable="true" />
+        <argument
+            android:name="offers"
+            app:argType="com.kuwait.showroomz.model.data.Offer[]"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/showEditProfile"
+            app:destination="@+id/editProfileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showPaymentListFragment"
+            app:destination="@+id/paymentListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showChangePassword"
+            app:destination="@+id/changePasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showCallbacks"
+            app:destination="@+id/callback"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showFinanceCallback"
+            app:destination="@+id/financeCallback"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showFinanceRequest"
+            app:destination="@+id/financeRequestFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showTestDriveList"
+            app:destination="@+id/testDriveListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showFavoriteList"
+            app:destination="@+id/favoriteFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showAppraisalList"
+            app:destination="@+id/appraisalRequestsListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.kuwait.showroomz.view.fragment.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/showRegister"
+            app:destination="@+id/registerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showProfile"
+            app:destination="@+id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showForgetPassword"
+            app:destination="@+id/forgetPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showTestDriveAddress"
+            app:destination="@+id/testDriveAddressFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showCallbackBank"
+            app:destination="@+id/applyForFinance"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowBook"
+            app:destination="@id/bookNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowBookNowForRent"
+            app:destination="@id/bookNowRentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showApplyForFinanceStepOne"
+            app:destination="@+id/applyForFinanceStepOne"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowBuyNow"
+            app:destination="@id/buyNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowAppraisalCar"
+            app:destination="@id/yourCarDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="from"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_loginFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.kuwait.showroomz.view.fragment.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/showLogin"
+            app:destination="@+id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showProfile"
+            app:destination="@+id/profileFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showTestDriveAddress"
+            app:destination="@+id/testDriveAddressFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showCallbackBank"
+            app:destination="@+id/applyForFinance"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowBook"
+            app:destination="@id/bookNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowBookNowForRent"
+            app:destination="@id/bookNowRentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowBuyNow"
+            app:destination="@id/buyNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowAppraisalCar"
+            app:destination="@id/yourCarDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showApplyForFinanceStepOne"
+            app:destination="@+id/applyForFinanceStepOne"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="from"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ForgetPasswordFragment"
+        android:label="forgetPasswordFragment"
+        tools:layout="@layout/fragment_forget_password"/>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ChangePasswordFragment"
+        android:label="ChangePasswordFragment"
+        tools:layout="@layout/fragment_change_pasword">
+
+        <argument
+            android:name="email"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.kuwait.showroomz.view.fragment.EditProfileFragment"
+        android:label="editProfileFragment"
+        tools:layout="@layout/fragment_edit_profile">
+
+    </fragment>
+    <fragment
+        android:id="@+id/callback"
+        android:name="com.kuwait.showroomz.view.fragment.CallbackFragment"
+        android:label="CallbackFragment"
+        tools:layout="@layout/fragment_callback">
+        <action
+            android:id="@+id/aactionShowModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/financeCallback"
+        android:name="com.kuwait.showroomz.view.fragment.FinanceCallbackFragment"
+        android:label="FinanceCallbackFragment"
+        tools:layout="@layout/fragment_finance_callback">
+        <action
+            android:id="@+id/showFinanceCallbackItem"
+            app:destination="@id/financeCallbackItemFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.kuwait.showroomz.view.fragment.SearchFragment"
+        android:label="searchFragment"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/aactionShowModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_show_models_by_brand_id"
+            app:destination="@id/modelFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_search_show_locations_by_brand_Id"
+            app:destination="@id/mapsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="cat"
+            app:argType="com.kuwait.showroomz.model.data.Category" />
+    </fragment>
+    <fragment
+        android:id="@+id/testDriveDateFragment"
+        android:name="com.kuwait.showroomz.view.fragment.TestDriveDateReservationFragment"
+        android:label="testDriveDateFragment"
+        tools:layout="@layout/fragment_test_drive_date_reservation">
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model" />
+
+        <argument
+            android:name="atShowroom"
+
+
+            app:argType="integer" />
+
+
+        <!--        <argument-->
+        <!--            android:name="user"-->
+        <!--            app:argType="com.kuwait.showroomz.model.data.User" />-->
+        <action
+            android:id="@+id/action_show_testDriveAddressFragment"
+            app:destination="@id/testDriveAddressFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showLogin"
+            app:destination="@+id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/testDriveAddressFragment"
+        android:name="com.kuwait.showroomz.view.fragment.TestDriveAddressFragment"
+        android:label="testDriveAddressFragment"
+        tools:layout="@layout/fragment_test_drive_date_reservation">
+        <action
+            android:id="@+id/action_show_test_drive_map_location"
+            app:destination="@id/testDriveMapLocation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/testDriveMapLocation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/modelDetailsFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/testDriveMapLocation"
+        android:name="com.kuwait.showroomz.view.fragment.UserAddressMapsFragment"
+        android:label="testDriveMapLocation"
+        tools:layout="@layout/fragment_user_address_maps">
+        <argument
+            android:name="from"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/testDriveDetails"
+        android:name="com.kuwait.showroomz.view.fragment.TestDriveDetails"
+        android:label="testDriveDetails"
+        tools:layout="@layout/fragment_test_drive_details">
+        <action
+            android:id="@+id/actionShowModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="testDrive"
+            app:argType="com.kuwait.showroomz.model.data.TestDrive" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/testDriveListFragment"
+        android:name="com.kuwait.showroomz.view.fragment.TestDriveListFragment"
+        android:label="testDriveListFragment"
+        tools:layout="@layout/fragment_list_test_drivek">
+        <action
+            android:id="@+id/showTestDriveDetails"
+            app:destination="@id/testDriveDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.kuwait.showroomz.view.fragment.FavoriteFragment"
+        android:label="favoriteFragment"
+        tools:layout="@layout/fragment_favorite">
+        <action
+            android:id="@+id/showModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/compareFragment"
+        android:name="com.kuwait.showroomz.view.fragment.CompareFragment"
+        android:label="compareFragment"
+        tools:layout="@layout/fragment_compare">
+        <argument
+            android:name="MODEL"
+            app:argType="com.kuwait.showroomz.model.data.Model" />
+        <action
+            android:id="@+id/showSearchToCompare"
+            app:destination="@id/searchToCompareFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/aactionShowModelDetail"
+            app:destination="@id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/searchToCompareFragment"
+        android:name="com.kuwait.showroomz.view.fragment.SearchToCompareFragment"
+        android:label="searchToCompareFragment"
+        tools:layout="@layout/fragment_search_to_campare">
+        <argument
+            android:name="cat"
+            app:argType="com.kuwait.showroomz.model.data.Category" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookNowFragment"
+        android:name="com.kuwait.showroomz.view.fragment.BookNowFragment"
+        android:label="bookNowFragment"
+        tools:layout="@layout/fragment_book_now">
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model" />
+        <argument
+            android:name="trim"
+            app:argType="com.kuwait.showroomz.model.data.Trim" />
+        <argument
+            android:name="program"
+            app:argType="com.kuwait.showroomz.model.data.Program"
+            app:nullable="true" />
+        <action
+            android:id="@+id/showPaymentWebFragment"
+            app:destination="@id/paymentWebFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/buyNowFragment"
+        android:name="com.kuwait.showroomz.view.fragment.BuyNowFragment"
+        android:label="bookNowFragment"
+        tools:layout="@layout/fragment_buy_now">
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model" />
+        <argument
+            android:name="trim"
+            app:argType="com.kuwait.showroomz.model.data.Trim" />
+        <action
+            android:id="@+id/actionShowModelOffers"
+            app:destination="@id/modelOfferFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showPaymentWebFragment"
+            app:destination="@id/paymentWebFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/applyForFinance"
+        android:name="com.kuwait.showroomz.view.fragment.ApplyForFinanceFragment"
+        android:label="applyForFinance"
+        tools:layout="@layout/fragment_apply_for_finance">
+
+    </fragment>
+    <fragment
+        android:id="@+id/financeRequestFragment"
+        android:name="com.kuwait.showroomz.view.fragment.FinanceRequestFragment"
+        android:label="financeRequestFragment"
+        tools:layout="@layout/fragment_finance_request">
+        <action
+            android:id="@+id/showFinanceRequestItemDetail"
+            app:destination="@id/financeRequestDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/financeRequestDetailFragment"
+        android:name="com.kuwait.showroomz.view.fragment.FinanceRequestDetailFragment"
+        android:label="financeRequestDeatilFragment"
+        tools:layout="@layout/fragment_finance_request_detail">
+        <argument
+            android:name="callbackId"
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="callback"
+            app:argType="com.kuwait.showroomz.model.data.Callback"
+            app:nullable="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/bookNowRentFragment"
+        android:name="com.kuwait.showroomz.view.fragment.BookNowRentFragment"
+        android:label="bookNowRentFragment"
+        tools:layout="@layout/fragment_book_now_rent">
+        <action
+            android:id="@+id/showMap"
+            app:destination="@id/testDriveMapLocation"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/testDriveMapLocation"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showPaymentWebFragment"
+            app:destination="@id/paymentWebFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model" />
+        <argument
+            android:name="trim"
+            app:argType="com.kuwait.showroomz.model.data.Trim" />
+        <argument
+            android:name="programId"
+            app:argType="string"
+            app:nullable="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/paymentListFragment"
+        android:name="com.kuwait.showroomz.view.fragment.PaymentListFragment"
+        android:label="paymentListFragment"
+        tools:layout="@layout/fragment_payment_list">
+        <action
+            android:id="@+id/showBookNowItemFragment"
+            app:destination="@id/bookNowItemFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showPaymentItemFragment"
+            app:destination="@id/paymentItemFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showBookingRentItemFragment"
+            app:destination="@id/bookingRentItemFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentItemFragment"
+        android:name="com.kuwait.showroomz.view.fragment.PaymentItemFragment"
+        android:label="paymentItemFragment"
+        tools:layout="@layout/fragment_payment_item">
+        <argument
+            android:name="booking"
+            app:argType="com.kuwait.showroomz.model.data.Booking" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookNowItemFragment"
+        android:name="com.kuwait.showroomz.view.fragment.BookNowItemFragment"
+        android:label="paymentItemFragment"
+        tools:layout="@layout/fragment_book_now_item">
+        <argument
+            android:name="booking"
+            app:argType="com.kuwait.showroomz.model.data.Booking" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingRentItemFragment"
+        android:name="com.kuwait.showroomz.view.fragment.BookingRentItemFragment"
+        android:label="bookingRentItemFragment"
+        tools:layout="@layout/fragment_booking_rent_item">
+        <argument
+            android:name="booking"
+            app:argType="com.kuwait.showroomz.model.data.Booking" />
+    </fragment>
+    <fragment
+        android:id="@+id/paymentWebFragment"
+        android:name="com.kuwait.showroomz.view.fragment.PaymentWebFragment"
+        android:label="paymentWebFragment"
+        tools:layout="@layout/fragment_payment_web">
+        <argument
+            android:name="url"
+            app:argType="string" />
+        <argument android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/customizeDashboardFragment"
+        android:name="com.kuwait.showroomz.view.fragment.DashboardRecyclersFragment"
+        android:label="customizeDashboardFragment"
+        tools:layout="@layout/fragment_dahboard_recyclers" />
+    <fragment
+        android:id="@+id/aboutAppFragment"
+        android:name="com.kuwait.showroomz.view.fragment.AboutAppFragment"
+        android:label="aboutAppFragment"
+        tools:layout="@layout/fragment_about_app" />
+    <fragment
+        android:id="@+id/termsConditionsFragment"
+        android:name="com.kuwait.showroomz.view.fragment.TermAndConditionFragment"
+        android:label="termsConditionsFragment"
+        tools:layout="@layout/fragment_term_and_condition" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ContactUsFragment"
+        android:label="contactUsFragment"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/request_amountFragment"
+        android:name="com.kuwait.showroomz.view.fragment.RequestAmountFragment"
+        android:label="request_amountFragment"
+        tools:layout="@layout/fragment_request_amount">
+        <action
+            android:id="@+id/showCallbackBank"
+            app:destination="@+id/applyForFinance"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/showLogin"
+            app:destination="@+id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showApplyForFinanceStepOneAmount"
+            app:destination="@+id/applyForFinanceStepOne"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/registerFragment"
+            app:popUpToInclusive="true" />
+        <argument
+            android:name="bank"
+            app:argType="com.kuwait.showroomz.model.data.Bank"
+            app:nullable="true" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/yourCarDetailsFragment"
+        android:name="com.kuwait.showroomz.view.fragment.YourCarDetailsFragment"
+        android:label="yourCarDetailsFragment"
+        tools:layout="@layout/fragment_your_car_details">
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model"
+            app:nullable="true"/>
+
+        <action
+            android:id="@+id/showBrandList"
+            app:destination="@id/brandListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/brandListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showModelList"
+            app:destination="@id/modelListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/modelListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showYearList"
+            app:destination="@id/yearListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/yearListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showCylinderList"
+            app:destination="@id/cylinderListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/cylinderListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/showCarConditionsList"
+            app:destination="@id/conditionsListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/conditionsListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/actionShowBook"
+            app:destination="@id/bookNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowBuyNow"
+            app:destination="@id/buyNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowFinance"
+            app:destination="@id/financeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/show_user_car_Details"
+            app:destination="@id/userCarDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/brandListFragment"
+        android:name="com.kuwait.showroomz.view.fragment.BrandListFragment"
+        android:label="brandListFragment"
+        tools:layout="@layout/fragment_brand_list">
+
+    </fragment>
+    <fragment
+        android:id="@+id/modelListFragment"
+        android:name="com.kuwait.showroomz.view.fragment.ModelListFragment"
+        android:label="modelListFragment"
+        tools:layout="@layout/fragment_model_list">
+        <argument
+            android:name="models"
+            app:argType="com.kuwait.showroomz.model.data.AppraisalInfo"
+            app:nullable="true"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/yearListFragment"
+        android:name="com.kuwait.showroomz.view.fragment.YearListFragment"
+        android:label="yearListFragment" />
+    <fragment
+        android:id="@+id/cylinderListFragment"
+        android:name="com.kuwait.showroomz.view.fragment.CylinderListFragment"
+        android:label="cylinderListFragment"
+        tools:layout="@layout/fragment_cylinder_list" />
+    <fragment
+        android:id="@+id/conditionsListFragment"
+        android:name="com.kuwait.showroomz.view.fragment.CarConditionsListFragment"
+        android:label="conditionsListFragment"
+        tools:layout="@layout/fragment_car_condition_list" >
+        <argument
+            android:name="source"
+            app:argType="integer"
+             />
+    </fragment>
+    <fragment
+        android:id="@+id/appraisalRequestsListFragment"
+        android:name="com.kuwait.showroomz.view.fragment.AppraisalRequestsListFragment"
+        android:label="appraisalRequestsListFragment"
+        tools:layout="@layout/fragment_list_appraisal_requests">
+        <action
+            android:id="@+id/showItem"
+            app:destination="@id/appraisalCarItemDetails"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/appraisalCarItemDetails"
+        android:name="com.kuwait.showroomz.view.fragment.AppraisalCarItemDetails"
+        android:label="appraisalCarItemDetails"
+        tools:layout="@layout/fragment_apparaisal_request_item_details">
+        <argument
+            android:name="callback"
+            app:argType="com.kuwait.showroomz.model.simplifier.CallbackAppraisalClientVehicleSimplifier"
+            app:nullable="true" />
+        <action
+            android:id="@+id/ShowModelDetail"
+            app:destination="@+id/modelDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowBook"
+            app:destination="@id/bookNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowBuyNow"
+            app:destination="@id/buyNowFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowFinance"
+            app:destination="@id/financeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="appraisal_id"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/applyForFinanceStepOne"
+        android:name="com.kuwait.showroomz.view.fragment.ApplyForFinanceFragment2"
+        android:label="applyForFinanceStepOne"
+        tools:layout="@layout/fragment_apply_for_finance2">
+        <action
+            android:id="@+id/actionShowFinanceStepTwo"
+            app:destination="@id/applyForFinanceStepTwo"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowFinanceStepThree"
+            app:destination="@id/applyForFinanceStepThree"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="bank"
+            app:argType="com.kuwait.showroomz.model.data.Bank" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/applyForFinanceStepTwo"
+        android:name="com.kuwait.showroomz.view.fragment.ApplyForFinanceStepTwoFragment"
+        android:label="applyForFinanceStepTwo"
+        tools:layout="@layout/fragment_apply_for_finance_step_two">
+        <action
+            android:id="@+id/actionShowFinanceStepThree"
+            app:destination="@id/applyForFinanceStepThree"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/actionShowFinanceStepFour"
+            app:destination="@id/applyForFinanceStepFour"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <argument
+            android:name="bank"
+            app:argType="com.kuwait.showroomz.model.data.Bank"
+            app:nullable="true" />
+        <argument
+            android:name="isEligible"
+
+            app:argType="boolean" />
+    </fragment>
+    <fragment
+        android:id="@+id/applyForFinanceStepThree"
+        android:name="com.kuwait.showroomz.view.fragment.ApplyForFinanceStepThreeFragment"
+        android:label="applyForFinanceStepThree"
+        tools:layout="@layout/fragment_apply_for_finance_step_three">
+        <argument
+            android:name="bank"
+            app:argType="com.kuwait.showroomz.model.data.Bank"
+            app:nullable="true" />
+        <action
+            android:id="@+id/actionShowFinanceStepFour"
+            app:destination="@id/applyForFinanceStepFour"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/applyForFinanceStepFour"
+        android:name="com.kuwait.showroomz.view.fragment.ApplyForFinanceStepFourFragment"
+        android:label="applyForFinanceStepFour"
+        tools:layout="@layout/fragment_apply_for_finance_step_four" />
+    <action
+        android:id="@+id/actionShowFinanceStepOne"
+        app:destination="@id/applyForFinanceStepOne"
+        app:enterAnim="@anim/slide_in_right"
+        app:exitAnim="@anim/slide_out_left"
+        app:popEnterAnim="@anim/slide_in_left"
+        app:popExitAnim="@anim/slide_out_right" />
+    <fragment
+        android:id="@+id/videoFragment"
+        android:name="com.kuwait.showroomz.view.fragment.VideoFragment"
+        tools:layout="@layout/fragment_video">
+        <argument
+            android:name="video"
+            app:argType="com.kuwait.showroomz.model.data.Image" />
+    </fragment>
+    <fragment
+        android:id="@+id/userCarDetailsFragment"
+        android:name="com.kuwait.showroomz.view.fragment.UserCarDetailsFragment"
+        android:label="UserCarDetailsFragment" >
+        <argument
+            android:name="usercar"
+            app:argType="com.kuwait.showroomz.model.data.ClientVehicle" />
+        <argument
+            android:name="model"
+            app:argType="com.kuwait.showroomz.model.data.Model"
+            app:nullable="true" />
+    </fragment>
+</navigation>

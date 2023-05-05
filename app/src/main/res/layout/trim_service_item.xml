@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="service"
+            type="com.kuwait.showroomz.model.simplifier.ServiceSimplifier" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:minWidth="120dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp">
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/action_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="3dp"
+            android:imageUrl="@{service.image}"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.PILL" />
+        <TextView
+            android:id="@+id/service_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/cairo_light"
+            android:padding="2dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+
+            android:text="@{service.name}"
+            android:textColor="@color/colorBlack"
+            android:textSize="14sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/action_icon" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

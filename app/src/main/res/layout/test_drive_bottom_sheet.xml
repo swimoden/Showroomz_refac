@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kuwait.showroomz.viewModel.ModelDetailVM" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:background="@color/colorWhite"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:lineSpacingMultiplier="0.8"
+                android:text="@string/you_can_choose_test_drive_at_showroom_or_at_your_address"
+                android:textAlignment="center"
+                android:textColor="@color/colorBlack"
+                android:textSize="18sp"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/confirm_deliver_to_my_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:background="@drawable/filled_black"
+                android:text="@string/deliver_to_my_location"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintTop_toBottomOf="@id/title_text" />
+
+            <Button
+                android:id="@+id/test_drive_at_showroom_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/filled_black"
+                android:text="@string/test_drive_at_showroom"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                app:layout_constraintTop_toBottomOf="@id/confirm_deliver_to_my_location" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@+id/exit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@color/transparent">
+
+            <ImageButton
+                android:id="@+id/exit_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="30dp"
+                android:background="@drawable/circle_red_background"
+                android:padding="10dp"
+                android:src="@drawable/ic_close"
+                android:tint="@color/colorWhite" />
+
+
+        </RelativeLayout>
+
+
+    </FrameLayout>
+
+</layout>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/tools"
+    >
+    <data>
+        <import
+            alias="v"
+            type="android.view.View" />
+        <variable
+            name="location"
+            type="com.kuwait.showroomz.model.simplifier.LocationSimplifier" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        card_view:cardCornerRadius="6dp"
+        card_view:cardElevation="4dp"
+        android:layout_width="320dp"
+        android:layout_height="180dp"
+        android:layout_margin="5dp"
+        >
+
+
+        <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            >
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="@{location.addressName}"
+                />
+
+            <TextView
+                android:id="@+id/working_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_below="@id/name"
+                android:text="@{location.formattedWorkingHours(-1)}"
+                />
+
+            <TextView
+                android:id="@+id/friday_working_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_below="@id/working_hours"
+                android:text="@{location.formattedWorkingHours(5)}"
+                />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="6dp"
+                android:layout_alignParentBottom="true"
+                >
+
+                <Button
+                    android:id="@+id/callback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/filled_red"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/request_appointment"
+                    android:textColor="@color/colorWhite"
+                    android:visibility="@{location.hide?v.GONE:v.VISIBLE }"
+                    />
+
+                <Button
+                    android:id="@+id/navigate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:background="@drawable/outline_gray"
+                    android:paddingStart="5dp"
+                    android:paddingEnd="5dp"
+                    android:text="@string/direction"
+                    android:textColor="@color/colorBlack" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

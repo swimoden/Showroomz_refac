@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="android.text.TextUtils" />
+        <variable
+            name="model"
+            type="com.kuwait.showroomz.model.simplifier.ModelSimplifier" />
+        <import
+            alias="v"
+            type="android.view.View" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+
+            android:id="@+id/shapeableImageView"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:imageUrl="@{model.image}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/roundedImageView"
+            android:scaleType="fitXY">
+
+
+        </com.google.android.material.imageview.ShapeableImageView>
+
+        <LinearLayout
+            android:background="@drawable/filled_overlay_dark"
+            android:id="@+id/linearLayout"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:padding="10dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/shapeableImageView">
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:id="@+id/model_category"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_bold"
+                    android:text="@{model.categoryParent.name+` | `+model.brand.catName+ ` | ` + model.name}"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="start"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <!--<TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{model.name}"
+                    android:textSize="16sp"
+                    android:gravity="center_vertical"
+
+                    android:fontFamily="@font/cairo_bold"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/model_category"
+                    />-->
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{(model.brand.isBrand? @string/starting_price : @string/down_payment_)+ ` `+model.price}"
+                android:textSize="16sp"
+                android:layout_marginTop="-5dp"
+                android:fontFamily="@font/cairo_regular"
+                android:textColor="@color/colorWhite"
+                android:visibility="@{TextUtils.isEmpty(model.price) ? v.GONE : v.VISIBLE}" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

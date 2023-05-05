@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kuwait.showroomz.viewModel.ApplyForFinanceStepTwoVM" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_container"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="10dp"
+                android:src="@mipmap/back_btn_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/cairo_semi_bold"
+                android:text="@string/bank_details"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/back_btn"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="@font/cairo_regular"
+                android:text="@string/step_2_4"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bank_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_container">
+
+            <com.kuwait.showroomz.extras.customViews.ClickableEditText
+                android:id="@+id/bankTextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="12dp"
+
+                android:background="@drawable/outline_gray"
+                android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                android:enabled="false"
+                android:fontFamily="@font/cairo_regular"
+                android:padding="10dp"
+                android:singleLine="false"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/bank_constraint"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorWhite"
+                android:fontFamily="@font/cairo_bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/select_your_bank"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loan_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+
+            android:hint="@string/do_you_have_lean"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/bank_layout">
+
+            <TextView
+                android:id="@+id/loanEditText"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+
+                android:background="@drawable/outline_gray"
+                android:fontFamily="@font/cairo_regular"
+                android:padding="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/no_checkbox"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/checkbox_background"
+                android:button="@null"
+                android:checked="@{!viewModel.haveLoan}"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/no_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/cairo_regular"
+                android:text="@string/no"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/no_checkbox"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/yes_checkbox"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/checkbox_background"
+                android:button="@null"
+                android:checked="@{viewModel.haveLoan}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/no_TV"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/cairo_regular"
+                android:text="@string/yes"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/yes_checkbox"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorWhite"
+                android:fontFamily="@font/cairo_bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/do_you_have_lean"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/loan_payment_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:hint="@string/mention_your_monthly_loan_payment"
+            android:textColorHint="@color/colorBlack"
+            android:visibility="@{viewModel.haveLoan?view.VISIBLE:view.GONE}"
+            app:boxStrokeColor="@color/colorBlack"
+            app:boxStrokeWidth="0.8dp"
+            app:boxStrokeWidthFocused="0.8dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@null"
+            app:errorTextAppearance="@style/editTextErrorTextAppearance"
+            app:hintTextColor="@color/colorBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/loan_layout">
+
+            <com.kuwait.showroomz.extras.customViews.ClickableEditText
+                android:id="@+id/loan_paymentEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/outline_gray"
+                android:fontFamily="@font/cairo_regular"
+                android:inputType="number"
+                android:padding="10dp"
+                android:text="@={viewModel.loanPayment}"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                android:maxLength="5"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorWhite"
+                android:fontFamily="@font/cairo_bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/mention_your_monthly_loan_payment"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/credit_card"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+
+            android:hint="@string/do_you_have_lean"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toBottomOf="@id/loan_payment_layout">
+
+            <TextView
+                android:id="@+id/credit_card_txt"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="12dp"
+
+                android:background="@drawable/outline_gray"
+                android:fontFamily="@font/cairo_regular"
+                android:padding="10dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/no_checkbox_credit_card"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/checkbox_background"
+                android:button="@null"
+                android:checked="@{!viewModel.haveCreditCard}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/no_TV_credit_card"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/cairo_regular"
+                android:text="@string/no"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/no_checkbox_credit_card"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/yes_checkbox_credit_card"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/checkbox_background"
+                android:button="@null"
+                android:checked="@{viewModel.haveCreditCard}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/no_TV_credit_card"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/cairo_regular"
+                android:text="@string/yes"
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/yes_checkbox_credit_card"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorWhite"
+                android:fontFamily="@font/cairo_bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/do_you_have_credit_card"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/credit_card_amount_layout"
+            android:visibility="@{viewModel.haveCreditCard?view.VISIBLE:view.GONE}"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:hint="@string/mention_your_monthly_loan_payment"
+            android:textColorHint="@color/colorBlack"
+            app:boxStrokeColor="@color/colorBlack"
+            app:boxStrokeWidth="0.8dp"
+            app:boxStrokeWidthFocused="0.8dp"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@null"
+            app:errorTextAppearance="@style/editTextErrorTextAppearance"
+            app:hintTextColor="@color/colorBlack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/credit_card">
+
+            <com.kuwait.showroomz.extras.customViews.ClickableEditText
+                android:id="@+id/credit_card_amountEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/outline_gray"
+                android:fontFamily="@font/cairo_regular"
+                android:inputType="number"
+                android:padding="10dp"
+                android:text="@={viewModel.creditCardPayment}"
+                android:textColor="@color/colorBlack"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent"
+                android:maxLength="5"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorWhite"
+                android:fontFamily="@font/cairo_bold"
+                android:paddingStart="5dp"
+                android:paddingEnd="5dp"
+                android:text="@string/credit_card_amount_payment"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp"
+                android:inputType="number"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:id="@+id/next_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:background="@drawable/filled_black"
+            android:fontFamily="@font/cairo_regular"
+            android:text="@string/next"
+            android:onClick="@{()->viewModel.checkData()}"
+            android:textAllCaps="true"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

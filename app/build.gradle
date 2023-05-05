@@ -1,0 +1,197 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: "androidx.navigation.safeargs"
+apply plugin: 'realm-android'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
+//apply plugin: 'kotlin-parcelize'
+
+androidExtensions {
+    experimental = true
+}
+
+android {
+    signingConfigs {
+        config {
+            keyAlias 'showroomz'
+            keyPassword 'showroomz@123'
+            storePassword 'showroomz@123'
+            storeFile file('/Users/swimo/Desktop/Showroomz/Showroomz_Keystore/showroomz.jks')
+        }
+    }
+    bundle {
+        language {
+            // Specifies that the app bundle should not support
+            // configuration APKs for language resources. These
+            // resources are instead packaged with each base and
+            // dynamic feature APK.
+            enableSplit = false
+        }
+    }
+    compileSdkVersion 33
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.kuwait.showroomz"
+        minSdkVersion 23
+        targetSdkVersion 33
+        versionName "5.1.1"
+        versionCode 303
+        multiDexEnabled true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+    }
+    buildFeatures {
+        viewBinding true
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+            applicationIdSuffix '.dev'
+            versionNameSuffix '-dev'
+            buildConfigField "String", "API_VERSION", "\"api/v1/app/\""
+            buildConfigField "boolean", "IS_PROD", "false"
+            buildConfigField "String", "BASE_URL", "\"https://apibeta.showroomz.com/\""
+            buildConfigField "String", "PAYMENT_URL", "\"https://api.upayments.com/test-payment\""
+            buildConfigField "String", "DB_NAME", "\"showroomz_dev.realm\""
+            buildConfigField "Long", "DB_SHEMA_VERSION", "12L"
+            buildConfigField "String", "fb_provider_id", "\"com.facebook.app.FacebookContentProvider2269591033260551\""
+            resValue "string", "fb_provider_id", "com.facebook.app.FacebookContentProvider2269591033260551"
+            buildConfigField "String", "facebook_app_id", "\"2269591033260551\""
+            resValue "string", "facebook_app_id", "2269591033260551"
+            buildConfigField "String", "fb_login_protocol_scheme", "\"fb2269591033260551\""
+            resValue "string", "fb_login_protocol_scheme", "fb2269591033260551"
+            resValue "string", "app_name", "Showroomz_dev"
+            //payments fields
+            buildConfigField "String", "merchantid", "\"1201\""
+            buildConfigField "String", "api_Key", "\"jtest123\""
+            buildConfigField "String", "username", "\"test\""
+            buildConfigField "String", "password", "\"test\""
+            buildConfigField "Integer", "test_mode", "1"
+            buildConfigField "String", "en_topic", "\"EN_DEV\""
+            buildConfigField "String", "ar_topic", "\"AR_DEV\""
+
+
+        }
+
+        release {
+            minifyEnabled false
+            debuggable false
+
+            signingConfig signingConfigs.config
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_VERSION", "\"api/v1/app/\""
+            buildConfigField "boolean", "IS_PROD", "true"
+            buildConfigField "String", "BASE_URL", "\"https://api.showroomz.com/\""
+            buildConfigField "String", "PAYMENT_URL", "\"https://api.upayments.com/payment-request\""
+            buildConfigField "String", "DB_NAME", "\"showroomz.realm\""
+            buildConfigField "Long", "DB_SHEMA_VERSION", "300L"
+            buildConfigField "String", "fb_provider_id", "\"com.facebook.app.FacebookContentProvider2189554028004220\""
+            resValue "string", "fb_provider_id", "com.facebook.app.FacebookContentProvider2189554028004220"
+            buildConfigField "String", "facebook_app_id", "\"2189554028004220\""
+            resValue "string", "facebook_app_id", "2189554028004220"
+            buildConfigField "String", "fb_login_protocol_scheme", "\"fb2189554028004220\""
+            resValue "string", "fb_login_protocol_scheme", "fb2189554028004220"
+            resValue "string", "app_name", "Showroomz"
+            //payments fields
+            buildConfigField "String", "merchantid", "\"15874\""
+            buildConfigField "String", "api_Key", "\"iROcZuqYQV9yAkbBUiuVX5aLnFLpJcVE78LrAYfg\""
+            buildConfigField "String", "username", "\"showroomz\""
+            buildConfigField "String", "password", "\"DayTwL4\$ERW9Ccs\""
+            buildConfigField "Integer", "test_mode", "0"
+            buildConfigField "String", "en_topic", "\"EN\""
+            buildConfigField "String", "ar_topic", "\"AR\""
+        }
+
+
+    }
+    testBuildType "release"
+    //dataBinding.enabled = true
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_11.toString()
+    }
+
+    buildFeatures {
+        dataBinding = true
+        viewBinding = true
+    }
+}
+
+
+def lifeCycleExtensionVersion = '1.1.1'
+def supportVersion = '28.0.0'
+def retrofitVersion = '2.8.1'
+def glideVersion = '4.11.0'
+def rxJavaVersion = '2.1.1'
+def navVersion = '2.4.2'
+def preferencesVersion = '1.1.1'
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.4.0'
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'com.google.android.material:material:1.6.0-alpha01'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
+    implementation 'androidx.fragment:fragment-ktx:1.4.0'
+    //support library
+    implementation "com.android.support:design:$supportVersion"
+    // Life cycle extension library for MVVM
+    implementation "android.arch.lifecycle:extensions:$lifeCycleExtensionVersion"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.1"
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navVersion"
+    implementation "com.google.android.material:material:1.4.0"
+    // Connection library
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+    implementation 'com.squareup.okhttp3:okhttp:4.3.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.3.1'
+
+    // Observable libray
+    implementation "io.reactivex.rxjava2:rxjava:$rxJavaVersion"
+    implementation "io.reactivex.rxjava2:rxandroid:$rxJavaVersion"
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    //jetpack library
+    implementation "com.android.support:palette-v7:$supportVersion"
+    //jetpack Preference library
+    implementation "androidx.preference:preference-ktx:$preferencesVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.android.gms:play-services-maps:18.0.2'
+
+    implementation platform('com.google.firebase:firebase-bom:25.12.0')
+    implementation 'com.google.firebase:firebase-messaging-ktx'
+    implementation 'com.google.android.gms:play-services-auth:20.0.1'
+
+    implementation 'com.google.firebase:firebase-crashlytics-ktx'
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+    implementation "com.github.YarikSOffice:lingver:1.3.0"
+    implementation 'com.google.android.gms:play-services-location:19.0.1'
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+    implementation 'com.github.mukeshsolanki:android-otpview-pinview:2.1.0'
+    testImplementation 'junit:junit:4.13.1'
+    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'com.google.android.play:core-ktx:1.8.1'
+    implementation 'com.facebook.android:facebook-android-sdk:5.15.3'
+    implementation 'com.facebook.android:facebook-login:12.1.0'
+    androidTestImplementation 'androidx.test:runner:1.4.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+
+}

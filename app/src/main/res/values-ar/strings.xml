@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<string name="app_name">Showroomz</string>-->
+    <string name="facebook_app_id">2189554028004220</string>
+    <string name="categories">اقسام</string>
+    <string name="closed">مغلق</string>
+    <string name="search_brands">البحث عن وكالات…</string>
+    <string name="main_showroom">المعرض الرئيسي</string>
+    <string name="search_models">البحت عن نماذج …</string>
+    <string name="request_appointment">طلب موعد</string>
+    <string name="quick_service">خدمة سريعة</string>
+    <string name="workshop">ورشة</string>
+    <string name="direction">اتجاه</string>
+    <string name="offers">عروض</string>
+    <string name="starting_price">السعر المبدئي :</string>
+    <string name="offer_price">سعر العرض  </string>
+    <string name="new_arrival">New Arrival</string>
+    <string name="exterior">خارجي</string>
+    <string name="interior">داخلي</string>
+    <string name="back">رجوع</string>
+    <string name="click_here">إضغط  هنا</string>
+    <string name="filter">فلتر</string>
+    <string name="filter_by_budget"> حسب الميزانية</string>
+    <string name="type_your_budget_here">اكتب ميزانيتك هنا</string>
+    <string name="vehicle_type">نوع السيارة</string>
+    <string name="gallery">صور</string>
+    <string name="no_data_found">لاتوجد بيانات</string>
+    <string name="get_program_click_here">احصل على البرامج</string>
+    <string name="choose_your_best_deal">اختر أفضل صفقة لك</string>
+    <string name="available_services">الخدمات المتاحة</string>
+    <string name="request_call_back">طلب الاتصال</string>
+    <string name="book_now">احجز الآن</string>
+    <string name="daily">يومي</string>
+    <string name="weekly">أسبوعي</string>
+    <string name="monthly">شهريا</string>
+    <string name="yearly">سنوي</string>
+    <string name="mileage_limit">ميل</string>
+    <string name="month_contract">عقد شهري</string>
+    <string name="day_contract">عقد يومي</string>
+    <string name="week_contract">عقد أسبوعي</string>
+    <string name="year_contract">عقد سنوي</string>
+    <string name="down_payment">الدفعة المقدمة</string>
+    <string name="down_payment_"> مقدم : </string>
+    <string name="installment_period">مدة الأقساط</string>
+    <string name="financing_banks">بنوك التمويل</string>
+    <string name="years">سنوات</string>
+    <string name="year">سنة</string>
+    <string name="estimated_value_results">نتائج تقييم السعر</string>
+    <string name="value_of_installment">إجمالي  قيمة المعاملة</string>
+    <string name="debit">المديونية </string>
+    <string name="profit">قيمة الإرباح</string>
+    <string name="monthly_installment">القسط الشهري</string>
+    <string name="installment">عدد الأقساط</string>
+    <string name="apply_for_finance">تقدم بطلب تمويل</string>
+    <string name="calculate">احسب</string>
+    <string name="months">شهر</string>
+    <string name="kwd">د.ك</string>
+    <string name="my_brands">العلامات</string>
+    <string name="show_more"><u>أظهر المزيد</u></string>
+    <string name="all_offers">جميع العروض</string>
+    <string name="oops_slow_or_no_internet_connection_please_try_again"> يرجى المحاولة مرة أخرى .عفوًا , اتصال إنترنت بطيء \n أو مقطوع.</string>
+    <string name="no_internet_connection">لا يوجد اتصال بالإنترنت</string>
+    <string name="offline_mode_allws_you_to_visit_all_categories_and_model_details">يسمح لك في حال عدم الاتصال بزيارة جميع الفئات \n وتفاصيل الطراز.</string>
+    <string name="you_can_still_try_offline_model">لا يزال بإمكانك تجربة نموذج غير متصل.</string>
+    <string name="try_again">حاول مجددا</string>
+    <string name="offline_mode">وضع غير متصل بالشبكة</string>
+    <string name="oops_looks_like_we_don_t_have_any_data_related_your_search">عفوًا ، يبدو أنه ليس لدينا أي بيانات تتعلق ببحثك.</string>
+    <string name="no_records_found">لا توجد بيانات</string>
+    <string name="exclusive_offers">عروض حصرية</string>
+    <string name="our_dealer">الوكلاء</string>
+    <string name="trending">الأكثر متابعة</string>
+    <string name="recently_viewed">المشاهدات الأخيرة</string>
+    <string name="profile">حسابي</string>
+    <string name="finance">تمويل</string>
+    <string name="language">لغة</string>
+    <string name="aboutApp">حول التطبيق</string>
+    <string name="terms_conditions">شروط و أحكام</string>
+    <string name="contact_us">اتصل بنا</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمه السر</string>
+    <string name="forget_password"><u>هل نسيت كلمة المرور </u></string>
+    <string name="login">تسجيل الدخول</string>
+    <string name="login_to_your_account">تسجيل الدخول إلى حسابك</string>
+    <string name="welcome_back">مرحبا بعودتك</string>
+    <string name="new_here">جديد هنا؟</string>
+    <string name="sign_up">سجل</string>
+    <string name="name">الاسم</string>
+    <string name="register_your_new_account">سجل حسابك الجديد</string>
+    <string name="phone_number">رقم الهاتف</string>
+    <string name="enter_your_e_mail_address_and_we_ll_n_send_you_a_link_to_reset_your_password">أدخل عنوان بريدك الإلكتروني \nوسنرسل لك رابطًا لإعادة تعيين كلمة مرورك.</string>
+    <string name="request_reset_link">طلب رابط إعادة التعيين</string>
+    <string name="email_address">البريد الإلكتروني</string>
+    <string name="you_are_just_a_click_away_to_change_nyour_password">أنت على بعد نقرة واحدة للتغيير\n كلمتك السرية.</string>
+    <string name="old_password">كلمة المرور القديمة</string>
+    <string name="new_password">كلمة سر جديدة</string>
+    <string name="confirm_new_password">تأكيد كلمة المرور الجديدة</string>
+    <string name="confirmation_pass">كلمة مرور التأكيد وكلمة المرور الجديدة مختلفة</string>
+
+    <string name="change_password">غير كلمة السر</string>
+    <string name="change_password_">غير كلمة السر؟</string>
+    <string name="show">إظهار</string>
+    <string name="hide">إخفاء</string>
+    <string name="favorites">المفضلة</string>
+    <string name="call_backs">طلبات الإتصال</string>
+    <string name="finance_call_backs">مكالمات التمويل</string>
+    <string name="finance_requests">طلبات التمويل</string>
+    <string name="test_drives">تجربة القيادة</string>
+    <string name="payments">المدفوعات</string>
+    <string name="edit_profile">تعديل الحساب</string>
+    <string name="dob">تاريخ الولادة</string>
+    <string name="gender">جنس</string>
+    <string name="civil_id_number">رقم البطاقة المدنية</string>
+    <string name="upload_license">تحميل الرخصة</string>
+    <string name="license_uploaded">تم تحميل الرخصة</string>
+    <string name="save_changes">حفظ التغييرات</string>
+    <string name="invalid_email">بريد إلكتروني خاطئ</string>
+    <string name="invalid_password">رمز مرور خاطئ</string>
+    <string name="empty_password">كلمة مرور فارغة</string>
+    <string name="reset_code_sent">تم إرسال رمز إعادة التعيين</string>
+    <string name="please_check_your_email_to_reset_nyour_password">يرجى التحقق من بريدك الإلكتروني لإعادة تعيين\n كلمة المرور الخاصة بك.</string>
+    <string name="done_successfully">تم بنجاح</string>
+    <string name="your_password_is_changed">تم تغيير كلمة المرور الخاصة بك.</string>
+    <string name="empty_phone">رقم الهاتف فارغ</string>
+    <string name="empty_name">الاسم فارغ</string>
+    <string name="invalid_name">الاسم غير مقبول</string>
+    <string name="phone_error">هذا الرقم تم استخدامه مع حساب اخر</string>
+    <string name="email_error">هذا البريد الالكتروني تم استخدامه مع حساب اخر</string>
+    <string name="invalid_phone">يجب ان يتكون رقم الهاتف من 8 ارقام على ان يبدأ ب 5،6 او 9</string>
+    <string name="register">تسجيل</string>
+    <string name="male">ذكر</string>
+    <string name="female">أنثى</string>
+    <string name="empty_gender">الجنس فارغ</string>
+    <string name="empty_civil_id">رقم البطاقة المدنية فارغ</string>
+    <string name="your_profile_is_update">يتم تحديث ملف التعريف الخاص بك</string>
+    <string name="already_have_an_account">هل لديك حساب؟</string>
+    <string name="invalid_civil_id">رقم البطاقة المدنية غير صالحة</string>
+    <string name="email_exist_already">البريد الإلكتروني موجود </string>
+    <string name="phone_exsit">رقم الهاتف موجود </string>
+    <string name="internet_connextion_problem">مشكلة اتصال الإنترنت</string>
+    <string name="search_by_brand_or_model">البحث حسب الماركة أو الموديل</string>
+    <string name="search_here">ابحث هنا</string>
+    <string name="search">بحث</string>
+    <string name="log_out">تسجيل خروج</string>
+    <string name="please_add_your_information_to_be_contacted">الرجاء إضافة المعلومات الخاصة بك. </string>
+    <string name="update_email">الرجاء تحديث البريد الالكتروني كي يصلك التأكيد</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="civil_id_optional">البطاقة المدنية (اختياري)</string>
+    <string name="pending">قيد الانتظار</string>
+    <string name="done">تم الاتصال</string>
+    <string name="representative_contact">شكرا لك مندوبنا سيتصل بك قريبا.</string>
+    <string name="representative_contact_delay">شكرًا لك ، نظرًا للظروف الحالية ، سيتصل مندوبنا بمجرد استئناف الدوام.</string>
+    <string name="bank_representative_contact">شكرًا لك ، سيتصل بك مندوب البنك قريبًا.</string>
+    <string name="bank_representative_contact_delay">شكرًا لك ، نظرًا للظروف الحالية ، سيتصل بك ممثل البنك بمجرد استئناف العمل.</string>
+    <string name="call_backs_requests">طلبات الإتصال</string>
+    <string name="finance_callback_requests">طلبات الإتصال للتمويل</string>
+    <string name="select_preferred_date_amp_time">اختيار الموعد</string>
+    <string name="test_drive_at_showroom">تجربة القيادة في المعرض</string>
+    <string name="deliver_to_my_location">توصيل</string>
+    <string name="model_name">اسم النموذج</string>
+    <string name="test_drive">اختبار القيادة</string>
+    <string name="choose_your_preferred_showroom">اختيار المعرض</string>
+    <string name="confirm_test_drive">تأكيد تجربة القيادة</string>
+    <string name="information">المعلومات</string>
+    <string name="deliver_to_my_current_location">توصيل</string>
+    <string name="address_type">نوع العنوان</string>
+    <string name="office">مكتب</string>
+    <string name="apartment">شقة</string>
+    <string name="home">منزل</string>
+    <string name="area">المنطقة</string>
+    <string name="street_number_nme">الشارع</string>
+    <string name="block_number">القطعة</string>
+    <string name="avenue">الجادة</string>
+    <string name="house_building_number">الرقم</string>
+    <string name="submit_test_drive_request">تأكيد تجربة القيادة</string>
+    <string name="pin_location">تحديد الموقع</string>
+    <string name="pin_my_current_location">تحديد هذا الموقع</string>
+    <string name="test_drive_created_successfully">لقد حجزت اختبار القيادة بنجاح ، \nيرجى التحقق من بريدك الإلكتروني للحصول \nعلى معلومات اختبار القيادة.</string>
+    <string name="timing_deliver_to_my_location">اختيار موعد التوصيل</string>
+    <string name="timing_test_drive_at_showroom">اختير الموعد في المعرض</string>
+    <string name="test_drive_error">خطأ في الطلب</string>
+    <string name="error">خطأ</string>
+    <string name="no_internet">لا يوجد اتصال بالإنترنت</string>
+    <string name="slow_internet">فشل الاتصال بـ Showroomz. يرجى التحقق من اتصال شبكة جهازك.</string>
+
+    <string name="choose_this_address">اختر هذا العنوان</string>
+    <string name="test_drive_bookings">تجربة القيادة</string>
+    <string name="booking_information">معلومات الحجز</string>
+    <string name="booking_date_amp_time">تاريخ الحجز</string>
+    <string name="test_drive_date_amp_time">تاريخ تجربة القيادة</string>
+    <string name="model_details">التفاصيل</string>
+    <string name="direction_to_the_location">الاتجاه إلى الموقع</string>
+    <string name="house_number">رقم المنزل</string>
+    <string name="apartment_number">رقم الشقة</string>
+    <string name="office_number">رقم المكتب</string>
+    <string name="compare">مقارنة</string>
+    <string name="main_features">الخصائص الرئيسية</string>
+    <string name="trims">Trims</string>
+    <string name="required_documents">الوتائق المطلوبة</string>
+    <string name="employee_type">نوع موظف</string>
+    <string name="private_txt">خاص</string>
+    <string name="government">حكومة</string>
+    <string name="net_salary_certificate">شهادة الراتب</string>
+    <string name="bank_account_number">رقم الحساب البنكي</string>
+    <string name="akamathopia">ألإقامة (للاجانب)</string>
+    <string name="three_month_bank_statement">كشف حساب بنكي لمدة 3 أشهر</string>
+    <string name="save_dashboard_changes">حفظ تغييرات </string>
+    <string name="camera">كاميرا</string>
+    <string name="form_submitted_successfully">تم الإرسال بنجاح</string>
+    <string name="form_submitted_successfully_message">تم تقديم طلب التمويل بنجاح.\n <b>البنك</b> سوف يتصل بك قريبا للتحقق </string>
+    <string name="rejected">مرفوض</string>
+    <string name="approved">موافق عليه</string>
+    <string name="finance_request_pending_txt">التحقق بموجب العملية من قبل البنك.\n سوف نعلمك قريبا</string>
+    <string name="finance_request_rejected_txt">يرجى التحقق من جميع الوثائق التي تم تحميلها\n وتقدم بطلب للحصول على القرض مرة أخرى</string>
+    <string name="finance_request_approved_txt">رجى الاتصال بالتاجر شخصيًا مع المستندات  \n  الأصلية معالجة قرضك</string>
+    <string name="applied_on">تم التطبيق</string>
+    <string name="download_success">تم التنزيل بنجاح</string>
+    <string name="download_error">خطأ في التنزيل</string>
+    <string name="phone">الهاتف</string>
+    <string name="civil_id">البطاقة المدنية</string>
+    <string name="knet">كي.نت</string>
+    <string name="master_visa">ماستر / فيزا</string>
+    <string name="upload_civil">تحميل البطاقة المدنية</string>
+    <string name="booking_can_hold_your_favorite_car_from_out_of_stock">يمكن للحجز أن يحمل سيارتك المفضلة من المخزون</string>
+    <string name="would_like_to_pay_more">هل ترغب في دفع المزيد؟</string>
+    <string name="type_your_amount">اكتب المبلغ الخاص بك</string>
+    <string name="user_details">بيانات المستخدم</string>
+    <string name="payment_method">طريقة الدفع او السداد</string>
+    <string name="note_the_amount_should_be_more_than_the_given_token_amount">ملاحظة: يجب أن يكون المبلغ أكبر من مبلغ الرمز المميز المحدد</string>
+    <string name="proceed_to_the_payment">انتقل إلى الدفع</string>
+    <string name="buy_now">اشتري الآن</string>
+    <string name="sub_total">مبلغ إجمالي</string>
+    <string name="change_your_offer"><u>تغيير العرض الخاص بك</u></string>
+    <string name="discount">خصم</string>
+    <string name="discount_from_showroomz">خصم من شورومز</string>
+    <string name="total">مجموع</string>
+    <string name="pay"> دفع </string>
+    <string name="booking_amount">مبلغ الحجز -</string>
+    <string name="service_included">الخدمات المضافة</string>
+    <string name="payment">الدفع</string>
+    <string name="choosed_offer"><u>العروض المختارة</u></string>
+    <string name="booking_start_date">تاريخ بدء الحجز</string>
+    <string name="booking_end_date">تاريخ انتهاء الحجز</string>
+    <string name="pick_up_delivery_location">مكان الاستلام</string>
+    <string name="drop_off_location">مكان التسليمل</string>
+    <string name="add_on_s">إضافات</string>
+    <string name="billing">الفواتير</string>
+    <string name="drivers">Drivers</string>
+    <string name="child_seat">Child Seat</string>
+    <string name="booking_price">سعر الحجز</string>
+    <string name="total_payable_amount">إجمالي المبلغ المستحق</string>
+    <string name="starting_from">بدءا من</string>
+    <string name="time">الوقت</string>
+    <string name="booking_error">خطأ في الحجز</string>
+    <string name="paid">المدفوعة</string>
+    <string name="monthly_deal">صفقة شهرية</string>
+    <string name="amount_paid">المبلغ المدفوع</string>
+    <string name="details">تفاصيل</string>
+    <string name="add_new_address">أضف عنوان جديد</string>
+    <string name="select_trim" >إختر المواصفات</string>
+    <string name="a_new_version_is_available_nplease_update_now">إصدار جديد متوفر.\n الرجاء التحديث الآن.</string>
+    <string name="a_new_version_is_available_do_you_want_to_update_now">إصدار جديد متاح هل تريد تحديثه الآن.</string>
+    <string name="customize_your_dashboard">تخصيص لوحة التحكم الخاصة بك</string>
+    <string name="you_can_easily_enable_ou_disable_your_dashboard_sections_at_any_time">يمكنك بسهولة تمكين أو تعطيل أقسام لوحة التحكم في أي وقت.</string>
+    <string name="send_email">ارسل بريد الكتروني</string>
+    <string name="call_us">اتصل بنا</string>
+    <string name="message">رسالة</string>
+    <string name="subject">موضوع</string>
+    <string name="contact_name">اسم جهة الاتصال</string>
+    <string name="update_downloaded">تم تحميل التحديث للتو.</string>
+    <string name="restart">إعادة تشغيل</string>
+    <string name="requested_amount">الكمية المطلوبة</string>
+    <string name="do_you_have_car_you_want_to_appraise">هل لديك سيارة تريد تقييمها؟</string>
+    <string name="hello">مرحبا</string>
+    <string name="no">لا</string>
+    <string name="yes">نعم</string>
+    <string name="your_car_details">تفاصيل سيارتك</string>
+    <string name="brand">الماركة</string>
+    <string name="engine">محرك</string>
+    <string name="cylinder">اسطوانة</string>
+    <string name="mileage">عدد الأميال</string>
+    <string name="condition">شرط</string>
+    <string name="any_description">وصف</string>
+    <string name="all_the_suggesting_prices_will_be_approximate_only">جميع الأسعار المقترحة ستكون تقريبية فقط.</string>
+    <string name="request_for_the_price">طلب السعر</string>
+    <string name="model">الموديل</string>
+    <string name="select_brand">اختر الماركة</string>
+    <string name="search_for_the_brand">ابحث عن الماركة</string>
+    <string name="search_for_the_model">ابحث عن الموديل</string>
+    <string name="select_model">اختر الموديل</string>
+    <string name="select_user_model">اختر من سيارتك</string>
+    <string name="select_year">حدد السنة</string>
+    <string name="select_cylinders">حدد الاسطوانات</string>
+    <string name="car_condition">حالة السيارة</string>
+    <string name="request_sent_successfully">تم إرسال الطلب بنجاح!</string>
+    <string name="your_request_has_been_submitted_successfully_you_will_be_notified_shortly_throught_your_email">تم تقديم طلبك بنجاح ، سيتم إبلاغك قريبًا عبر بريدك الإلكتروني</string>
+    <string name="all_the_suggesting_prices_are_approximate_only">جميع الأسعار المقترحة تقريبية فقط.</string>
+    <string name="appraisal_requests">طلبات التقييم</string>
+    <string name="car_you_want_to_buy">السيارة التي تريد شراءها</string>
+    <string name="car_you_want_to_appraise">السيارة التي تريد تقييمها</string>
+    <string name="appraisal_list">قائمة التقييم</string>
+    <string name="below_given_prices_from_the_apparaisal_companies_are_approximate_only_the_price_may_change">الأسعار الواردة أدناه من شركات التقييم تقريبية فقط. قد يتغير السعر.</string>
+    <string name="personal_details">تفاصيل شخصية</string>
+    <string name="nationality">الجنسية</string>
+    <string name="employemnt_details">تفاصيل العمل</string>
+    <string name="companyName">اسم الشركة</string>
+    <string name="empty_company_name">اسم الشركة فارغ</string>
+    <string name="monthly_income">الدخل الشهري</string>
+    <string name="empty_monthly_income">الدخل الشهري فارغ </string>
+
+    <string name="industry"> ميدان العمل</string>
+    <string name="select_industry">اختر ميدان العمل</string>
+    <string name="next">التالى</string>
+    <string name="step_2_4">الخطوة 2/4</string>
+    <string name="step_3_4">الخطوة 3/4</string>
+    <string name="step_4_4">الخطوة 4/4</string>
+    <string name="bank_details">التفاصيل المصرفية</string>
+    <string name="select_your_bank">حدد البنك الخاص بك</string>
+    <string name="do_you_have_lean">هل لديك قرض؟</string>
+    <string name="mention_your_monthly_loan_payment">المبلغ الشهري</string>
+    <string name="do_you_have_credit_card">هل لديك بطاقة الائتمان ؟</string>
+    <string name="results">النتائج</string>
+    <string name="list_of_banks_you_are_eligible_with">قائمة البنوك المؤهلة لها:</string>
+    <string name="documents">مستندات</string>
+    <string name="send_finance_request">أرسل طلب التمويل</string>
+    <string name="select_bank">حدد البنك</string>
+    <string name="successfully">تم بنجاح</string>
+    <string name="your_request_has_been_sent_successfully_we_will_get_back_to_you_shortly">تم إرسال طلبك بنجاح ، وسنعاود الاتصال بك قريبًا.</string>
+    <string name="you_can_choose_test_drive_at_showroom_or_at_your_address">يمكنك اختيار اختبار القيادة في صالة العرض أو في عنوانك</string>
+    <string name="add_photos">إضافة الصور</string>
+    <string name="choose_car_brand_first">إختر ماركة السيارة أولاً</string>
+    <string name="kuwaiti">كويتي</string>
+    <string name="foreign_nationality">غير كويتي</string>
+    <string name="credit_card_amount_payment">الحد الاقصى لبطاقة الائتمان</string>
+    <string name="sorry">آسف !</string>
+    <string name="bank">بنك .</string>
+    <string name="you_are_not_eligible_with_the_requirements_of">أنت غير مؤهل مع متطلبات</string>
+    <string name="options">الخيارات</string>
+    <string name="vehicle_videos">الفيديو</string>
+    <string name="videos_and_offers">الفيديوهات و العروض</string>
+    <string name="i_accept_sharing_my_informations_with_kfh_and_to_communicate_with_me">اقبل بمشاركة هذه المعلومات مع بيت التمويل</string>
+    <string name="accept_conditions">الرجاء الموافقة</string>
+    <string name="locations">مواقع</string>
+    <string name="friday">الجمعة: %s</string>
+    <string name="whhours"> %s الى %s</string>
+    <string name="to"> الى </string>
+    <string name="filter_error">ادخل خيار على الاقل لالفلترة</string>
+    <string name="empty_dob">تاريخ الولادة فارغ</string>
+    <string name="am">%s:%s صباحا</string>
+    <string name="pm">%s:%s عصرا</string>
+    <string name="end_date_should_be_bigger_than_start_date">يجب ان يكون تاريخ نهاية الحجز بعد تاريخ بدايته </string>
+    <string name="invalid_account_number">يجب ان يتكون رقم الحساب من 14 رقما</string>
+    <string name="error_uploding">فشل تحميل الملف</string>
+    <string name="server_error">Server error</string>
+    <string name="apologize">We apologize, it seems there is a problem from server please try later</string>
+    <string name="appraise_your_car">ثمن سيارتك</string>
+    <string name="want_to_apraise">•أول واسرع تطبيق في الكويت يثمن سيارتك ويعطيك فلوسك كااااااش 💰💰</string>
+    <string name="apraise_content">•اسرع تقييم رسمي معتمد ✍️✅</string>
+    <string name="apraise_content2">•خلال ٢٤ ساعة فقط تستلم فلوسك كاااااش 💸💸</string>
+    <string name="select_request">الرجاء قم باختيار مثمن قدم عرض سعر</string>
+
+
+
+    <string name="verify_mobile_nbr">تحقق من الهاتف المحمول</string>
+    <string name="msg_verify">سنرسل لك رسالة نصية قصيرة تحتوي على رمز التحقق.</string>
+    <string name="get_code">الحصول على رمز</string>
+    <string name="resend_code">اعادة ارسال</string>
+    <string name="verify_code" >تحقق</string>
+    <string name="code_sent_successfully" >تم إرسال الرمز بنجاح</string>
+    <string name="wrong_phone_number" >رقم هاتف خاطئ</string>
+    <string name="limit_reached" >لقد وصلت إلى الحد الأقصى ، يرجى المحاولة مرة أخرى في غضون 5 دقائق</string>
+    <string name="code_not_valid" >الرمز غير صالح</string>
+    <string name="code_validated_successfully" >تم التحقق من صحة الرمز بنجاح</string>
+    <string name="error_occurred">عذرا حدث خطأ الرجاء اعادة المحاولة لاحقا</string>
+    <string name="select_images">الرجاء تحميل الصور</string>
+    <string name="type_engine">الرجاء ادخال سعة المحرك</string>
+    <string name="type_meilage">الرجاء ادخال عدد الكيلومترات</string>
+    <string name="select_car_condition">الرجاء اختيار حالة السيارة</string>
+    <string name="enter_desc">الرجاء ادخال الوصف</string>
+    <string name="select_cylinder">الرجاء اختيار عدد الاسطوانات</string>
+
+    <string name="submit">حفظ</string>
+    <string name="other_brands">وكلاء اخرين</string>
+    <string name="enter_brand_name">ادخل اسم الوكيل</string>
+    <string name="enter_model_name">ادخل اسم السيارة</string>
+    <string name="note">ملاحظة:</string>
+    <string name="the_images_should_contains">يجب ان تحتوي الصور على:</string>
+    <string name="complete_car_check_up_document_if_available">صورة من ورقة الفحص ان وجدت</string>
+    <string name="speedometer_with_engine_started">صورة العداد و المحرك شغال</string>
+    <string name="paint_number_of_pieces">الصبغ(عدد القطع)</string>
+    <string name="chassis_condition">حالة الشاصي</string>
+    <string name="scratch_on_paint">خدوش عل الصبغ</string>
+    <string name="regular_service_in_dealer">سيرفس منتظم عند الوكيل</string>
+    <string name="type_paint">ادخل عدد القطع المصبوغة</string>
+    <string name="service_regulare_txt">سيرفس منتظم عند الوكيل</string>
+    <string name="service_not_regular">سيرفس غير منتظم عند الوكيل</string>
+    <string name="scratch_available">يوجد خدوش على الصبغ</string>
+    <string name="scratch_not_available">لا يوجد خدوش على الصبغ</string>
+    <string name="other_model">موديل اخر</string>
+    <string name="appraise_again">ثمن مجددا</string>
+    <string name="coming_soon">قريبا</string>
+    <string name="employee">غير متقاعد</string>
+    <string name="retired">متقاعد</string>
+    <string name="employee_statu">الرجاء اختيار الحالة المهنية</string>
+    <string name="employmet_statu">الحالة المهنية</string>
+    <string name="expired">منتهي</string>
+    <string name="daily_price">السعر اليومي</string>
+    <string name="nbr_persons">عدد الايام</string>
+    <string name="car_images">صور السيارة</string>
+    <string name="select_offer">اختر العرض</string>
+    <string name="included_offers">العروض</string>
+    <string name="accept">موافق</string>
+    <string name="or">أو</string>
+    <string name="gifts_provided">الهدايا المتوفرة</string>
+    <string name="providing_gift">+ الهدايا</string>
+    <string-array name="year">
+    <item>2008</item>
+    <item>2009</item>
+    <item>2010</item>
+    <item>2011</item>
+    <item>2012</item>
+    <item>2014</item>
+    <item>2015</item>
+    <item>2016</item>
+    <item>2017</item>
+    <item>2018</item>
+    <item>2019</item>
+    <item>2020</item>
+    <item>آخر</item>
+    </string-array>
+    <string-array name="cylinder">
+        <item>3 اسطوانات</item>
+        <item>4 اسطوانات</item>
+        <item>5 اسطوانات</item>
+        <item>6 اسطوانات</item>
+        <item>8 اسطوانات</item>
+        <item>12 اسطوانة</item>
+        <item>16 اسطوانة</item>
+    </string-array>
+    <string-array name="car_conditions">
+        <item>ممتاز</item>
+        <item>جيد جدا</item>
+        <item>جيد</item>
+        <item>متوسط</item>
+        <item>سيء</item>
+        <item>فيها بعض المشاكل</item>
+    </string-array>
+</resources>

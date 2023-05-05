@@ -1,0 +1,894 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.kuwait.showroomz.model.simplifier.ModelSimplifier" />
+
+        <variable
+            name="viewModel"
+            type="com.kuwait.showroomz.viewModel.CarDetailsVM" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:paddingBottom="10dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/top_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="?actionBarSize"
+
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <ImageButton
+                        android:id="@+id/back_btn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:padding="10dp"
+                        android:src="@mipmap/back_btn_white"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:fontFamily="@font/cairo_semi_bold"
+                        android:text="@string/your_car_details"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="18sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/back_btn"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/top_container">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/select_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="10dp"
+                        android:visibility="gone"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/select_text"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginBottom="10dp"
+                            android:fontFamily="@font/cairo_regular"
+                            android:padding="5dp"
+                            android:text="@string/select_user_model"
+                            android:textColor="@color/colorBlack"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:layout_marginEnd="10dp"
+                            android:background="@drawable/ic_baseline_keyboard_arrow_down_24"
+                            app:layout_constraintBottom_toBottomOf="@+id/select_text"
+                            app:layout_constraintEnd_toEndOf="parent"
+
+                            app:layout_constraintTop_toTopOf="@+id/select_text" />
+
+                        <Button
+                            android:id="@+id/show_user_cars"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            android:background="@color/transparent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/models_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:visibility="gone"
+                            app:layout_constraintTop_toBottomOf="@id/select_text" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/image_list_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/off_white"
+                        android:padding="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/select_container">
+
+                        <TextView
+                            android:id="@+id/add_TV"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_bold"
+                            android:text="@string/add_photos"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageView
+                            android:id="@+id/add_image_1"
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/rectangle_stroke_black"
+                            android:padding="10dp"
+                            android:src="@drawable/l1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/add_TV"
+                            app:layout_constraintWidth_percent="0.225"/>
+
+                        <ImageView
+                            android:id="@+id/add_image_2"
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/rectangle_stroke_black"
+                            android:padding="10dp"
+                            android:src="@drawable/l2"
+                            app:layout_constraintStart_toEndOf="@+id/add_image_1"
+                            app:layout_constraintTop_toBottomOf="@+id/add_TV"
+                            app:layout_constraintWidth_percent="0.225"/>
+                        <ImageView
+                            android:id="@+id/add_image_3"
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/rectangle_stroke_black"
+                            android:padding="10dp"
+                            android:src="@drawable/l3"
+                            app:layout_constraintStart_toEndOf="@+id/add_image_2"
+                            app:layout_constraintTop_toBottomOf="@+id/add_TV"
+                            app:layout_constraintWidth_percent="0.225"/>
+                        <ImageView
+                            android:id="@+id/add_image_4"
+                            android:layout_width="0dp"
+                            android:layout_height="70dp"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="8dp"
+                            android:background="@drawable/rectangle_stroke_black"
+                            android:padding="10dp"
+                            android:src="@drawable/l4"
+                            app:layout_constraintStart_toEndOf="@+id/add_image_3"
+                            app:layout_constraintTop_toBottomOf="@+id/add_TV"
+                            app:layout_constraintWidth_percent="0.225"/>
+
+                        <ImageView
+                            android:id="@+id/add_image"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:background="@drawable/rectangle_stroke_black"
+                            android:padding="10dp"
+                            android:src="@drawable/add_img"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/add_image_1" />
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/photos_recycler"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            app:layout_constraintStart_toEndOf="@id/add_image"
+                            app:layout_constraintTop_toBottomOf="@+id/add_image_1" />
+
+                        <TextView
+                            android:id="@+id/note_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/cairo_bold"
+                            android:text="@string/note"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/add_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/cairo_bold"
+                            android:text="@string/the_images_should_contains"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toEndOf="@id/note_txt"
+                            app:layout_constraintTop_toBottomOf="@id/add_image" />
+
+                        <TextView
+                            android:id="@+id/start1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/cairo_bold"
+                            android:text="*"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/note_txt" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/speedometer_with_engine_started"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toEndOf="@id/start1"
+                            app:layout_constraintTop_toBottomOf="@id/note_txt" />
+
+                        <TextView
+                            android:id="@+id/start2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/cairo_bold"
+                            android:text="*"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/start1" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/complete_car_check_up_document_if_available"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toEndOf="@id/start2"
+                            app:layout_constraintTop_toBottomOf="@id/start1" />
+                        <TextView
+                            android:id="@+id/start3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:fontFamily="@font/cairo_bold"
+                            android:text="*"
+                            android:textColor="@color/colorPrimaryDark"
+                            android:textSize="15sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/start2" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/car_images"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp"
+                            app:layout_constraintStart_toEndOf="@id/start3"
+                            app:layout_constraintTop_toBottomOf="@id/start2" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="10dp"
+                        android:paddingTop="20dp"
+                        android:paddingEnd="10dp"
+                        app:layout_constraintTop_toBottomOf="@id/image_list_container">
+
+                        <TextView
+                            android:id="@+id/brand_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/brand"
+                            android:textColor="@color/colorGrayDark"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <EditText
+                            android:id="@+id/brandEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_bg"
+                            android:cursorVisible="false"
+                            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                            android:enabled="false"
+                            android:fontFamily="@font/cairo_regular"
+
+                            android:singleLine="false"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/brand_txt" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/brandConstraint"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/brand_txt" />
+
+                        <TextView
+                            android:id="@+id/model_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/model"
+                            android:textColor="@color/colorGrayDark"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/brandEdit" />
+
+                        <EditText
+                            android:id="@+id/modelEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_bg"
+                            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                            android:enabled="false"
+                            android:fontFamily="@font/cairo_regular"
+                            android:singleLine="false"
+                            android:text="@{viewModel.modelName}"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/model_txt" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/modelConstraint"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/model_txt" />
+
+                        <TextView
+                            android:id="@+id/year_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/year"
+                            android:textColor="@color/colorGrayDark"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/modelEdit" />
+
+                        <EditText
+                            android:id="@+id/yearEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_bg"
+                            android:clickable="true"
+                            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                            android:enabled="false"
+                            android:focusable="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:singleLine="false"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/year_txt" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/yearConstraint"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/year_txt" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/engine_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            app:layout_constraintEnd_toStartOf="@id/cylinder_container"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/yearEdit">
+
+                            <TextView
+                                android:id="@+id/engine_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/engine"
+                                android:textColor="@color/colorGrayDark"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/engineEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edt_bg"
+                                android:fontFamily="@font/cairo_regular"
+                                android:paddingBottom="8dp"
+                                android:text="@={viewModel.engine}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="17sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/engine_txt" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/cylinder_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toEndOf="@id/engine_container"
+                            app:layout_constraintTop_toBottomOf="@id/yearEdit">
+
+                            <TextView
+                                android:id="@+id/cylinder_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/cylinder"
+                                android:textColor="@color/colorGrayDark"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/cylinderEdit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edt_bg"
+                                android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                                android:enabled="false"
+                                android:fontFamily="@font/cairo_regular"
+                                android:singleLine="false"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="17sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/cylinder_txt" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/cylinderConstraint"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/cylinder_txt" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                        <TextView
+                            android:id="@+id/mileage_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/mileage"
+                            android:textColor="@color/colorGray"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/cylinder_container" />
+
+                        <EditText
+                            android:id="@+id/mileageEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_bg"
+                            android:fontFamily="@font/cairo_regular"
+                            android:inputType="number"
+                            android:text="@={viewModel.mileage}"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mileage_txt" />
+
+                        <TextView
+                            android:id="@+id/condition_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/condition"
+                            android:textColor="@color/colorGrayDark"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/mileageEdit" />
+
+                        <EditText
+                            android:id="@+id/conditionEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_bg"
+                            android:drawableEnd="@drawable/ic_baseline_arrow_drop_down_24"
+                            android:enabled="false"
+                            android:fontFamily="@font/cairo_regular"
+                            android:paddingBottom="5dp"
+                            android:singleLine="false"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/condition_txt" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/conditionConstraint"
+                            android:layout_width="match_parent"
+                            android:layout_height="50dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/condition_txt" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/paint_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/conditionEdit">
+
+                            <TextView
+                                android:id="@+id/paint_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/paint_number_of_pieces"
+                                android:textColor="@color/colorGrayDark"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/paint_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edt_bg"
+                                android:fontFamily="@font/cairo_regular"
+                                android:paddingBottom="8dp"
+                                android:text="@={viewModel.paint}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="17sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/paint_txt" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/chassis_container"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/paint_container">
+
+                            <TextView
+                                android:id="@+id/chasis_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/chassis_condition"
+                                android:textColor="@color/colorGrayDark"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+
+                            <EditText
+                                android:id="@+id/chasis_edit"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/edt_bg"
+                                android:fontFamily="@font/cairo_regular"
+                                android:paddingBottom="8dp"
+                                android:text="@={viewModel.chasis}"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="17sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/chasis_txt" />
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:id="@+id/condition_chasis_constraint"
+                                android:layout_width="match_parent"
+                                android:layout_height="50dp"
+                                app:layout_constraintBottom_toBottomOf="@id/chasis_edit"
+                                app:layout_constraintStart_toStartOf="parent" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/scratch_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:hint="@string/do_you_have_lean"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/chassis_container">
+
+                            <CheckBox
+                                android:id="@+id/no_checkbox"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/checkbox_background"
+                                android:button="@null"
+                                android:checked="false"
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/scratch_txt" />
+
+                            <TextView
+                                android:id="@+id/no_TV"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/no"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="14sp"
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/no_checkbox"
+                                app:layout_constraintTop_toBottomOf="@id/scratch_txt" />
+
+                            <CheckBox
+                                android:id="@+id/yes_checkbox"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/checkbox_background"
+                                android:button="@null"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/no_TV"
+                                app:layout_constraintTop_toBottomOf="@id/scratch_txt" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/yes"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="14sp"
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/yes_checkbox"
+                                app:layout_constraintTop_toBottomOf="@id/scratch_txt" />
+
+                            <TextView
+                                android:id="@+id/scratch_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/scratch_on_paint"
+                                android:textColor="@color/colorGrayDark"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/colorGrayRow"
+                                app:layout_constraintTop_toBottomOf="@id/yes_checkbox" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/service_layout"
+                            android:layout_width="match_parent"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="@string/do_you_have_lean"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/scratch_layout">
+
+                            <CheckBox
+                                android:id="@+id/no_checkbox_service"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/checkbox_background"
+                                android:button="@null"
+                                android:checked="false"
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/service_txt" />
+
+                            <TextView
+                                android:id="@+id/no_TV_service"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/no"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="14sp"
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/no_checkbox_service"
+                                app:layout_constraintTop_toBottomOf="@id/service_txt" />
+
+                            <CheckBox
+                                android:id="@+id/yes_checkbox_service"
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@drawable/checkbox_background"
+                                android:button="@null"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@id/no_TV_service"
+                                app:layout_constraintTop_toBottomOf="@id/service_txt" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+
+                                android:layout_marginStart="10dp"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/yes"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="14sp"
+
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/yes_checkbox_service"
+                                app:layout_constraintTop_toBottomOf="@id/service_txt" />
+
+                            <TextView
+                                android:id="@+id/service_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:fontFamily="@font/cairo_regular"
+                                android:text="@string/regular_service_in_dealer"
+                                android:textColor="@color/colorGrayDark"
+                                android:textSize="16sp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/colorGrayRow"
+                                app:layout_constraintTop_toBottomOf="@id/yes_checkbox_service" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/options_container"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="-10dp"
+                            android:paddingTop="10dp"
+                            android:visibility="visible"
+                            app:layout_constraintTop_toBottomOf="@id/service_layout">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/options_recycler"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <TextView
+                            android:id="@+id/description_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/any_description"
+                            android:textColor="@color/colorGrayDark"
+                            android:textSize="16sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/options_container" />
+
+                        <EditText
+                            android:id="@+id/descriptionEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edt_bg"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@={viewModel.description}"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="17sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/description_txt" />
+
+                        <TextView
+                            android:id="@+id/txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/all_the_suggesting_prices_will_be_approximate_only"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="16sp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/descriptionEdit" />
+
+                        <Button
+                            android:id="@+id/request_price_btn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/filled_black"
+                            android:fontFamily="@font/cairo_regular"
+                            android:text="@string/request_for_the_price"
+                            android:textColor="@color/colorWhite"
+                            android:textSize="16sp"
+                            app:layout_constraintTop_toBottomOf="@id/txt" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <ProgressBar
+            android:id="@+id/progress_circular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
+

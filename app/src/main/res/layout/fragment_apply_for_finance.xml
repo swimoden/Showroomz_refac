@@ -1,0 +1,399 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.kuwait.showroomz.viewModel.ApplyForFinanceVM" />
+
+        <variable
+            name="view"
+            type="android.view.View" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:background="@color/colorWhite"
+        android:layout_height="match_parent"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:paddingBottom="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/header_doc_icon"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0.694" />
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="20sp"
+                android:src="@mipmap/back_btn_white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/required_documents_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/cairo_bold"
+                android:text="@string/required_documents"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+            <TextView
+                android:id="@+id/employee_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/cairo_bold"
+                android:text="@string/employee_type"
+                android:textAllCaps="true"
+                android:textColor="@color/colorWhite"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/required_documents_txt" />
+
+            <TextView
+                android:id="@+id/private_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="5dp"
+                android:background="@{viewModel.isPrivate?@drawable/filled_white:@drawable/outline_white}"
+                android:fontFamily="@font/cairo_regular"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="5dp"
+                android:text="@string/private_txt"
+
+                android:textColor="@{viewModel.isPrivate?  @color/colorPrimary : @color/colorWhite}"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/employee_type" />
+
+            <TextView
+                android:id="@+id/government_txt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:background="@{viewModel.isPrivate?@drawable/outline_white:@drawable/filled_white}"
+                android:fontFamily="@font/cairo_regular"
+                android:paddingStart="15dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="15dp"
+                android:paddingBottom="5dp"
+
+                android:text="@string/government"
+
+                android:textColor="@{viewModel.isPrivate ? @color/colorWhite: @color/colorPrimary }"
+                android:textSize="16sp"
+                app:layout_constraintStart_toEndOf="@id/private_txt"
+                app:layout_constraintTop_toBottomOf="@id/employee_type" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <FrameLayout
+            android:id="@+id/net_salary_certificate_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_container">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/net_salary_certificate_TextInputLayout"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+
+                android:hint="@string/net_salary_certificate"
+                android:textColorHint="@color/colorGrayDark"
+                app:boxStrokeColor="@color/colorBlack"
+                app:boxStrokeWidth="0.8dp"
+                app:boxStrokeWidthFocused="0.8dp"
+                app:errorEnabled="false"
+                app:errorIconDrawable="@null"
+                app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                app:hintTextColor="@color/colorGray"
+                android:focusableInTouchMode="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/civilIdTextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/net_salary_certificate_TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:inputType="text"
+                    android:paddingEnd="35dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorBlack"
+                    android:textCursorDrawable="@color/colorBlack"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/salaryUploadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginStart="20dp"
+
+                android:background="@null"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:clickable="@{!viewModel.loading}"
+                android:src="@drawable/upload_icon" />
+        </FrameLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/bank_account_TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:InputError="@{viewModel.bankNumberError}"
+            android:hint="@string/bank_account_number"
+            android:textColorHint="@color/colorGrayDark"
+            app:boxStrokeColor="@color/colorGrayDark"
+            app:boxStrokeWidth="0.8dp"
+            app:boxStrokeWidthFocused="0.8dp"
+            app:errorEnabled="false"
+            app:errorIconDrawable="@null"
+            app:errorTextAppearance="@style/editTextErrorTextAppearance"
+            app:hintTextColor="@color/colorGrayDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/net_salary_certificate_container">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:maxLength="14"
+                android:id="@+id/bank_account_TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:fontFamily="@font/cairo_regular"
+                android:inputType="number"
+                android:paddingEnd="30dp"
+                android:singleLine="true"
+                android:text="@={viewModel.bankNumber}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textCursorDrawable="@color/colorBlack" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/civil_id_TextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:InputError="@{viewModel.civilIdError}"
+            android:hint="@string/civil_id_number"
+            android:textColorHint="@color/colorGrayDark"
+            app:boxStrokeColor="@{viewModel.civilIdError?@color/colorPrimaryDark:@color/colorGrayDark}"
+            app:boxStrokeWidth="0.8dp"
+            app:boxStrokeWidthFocused="0.8dp"
+
+            app:errorEnabled="false"
+            app:errorIconDrawable="@null"
+            app:errorTextAppearance="@style/editTextErrorTextAppearance"
+            app:hintTextColor="@color/colorGrayDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/bank_account_TextInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/civil_id_TextInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:enabled="true"
+                android:fontFamily="@font/cairo_regular"
+                android:inputType="number"
+                android:paddingEnd="30dp"
+                android:singleLine="true"
+                android:maxLength="12"
+                android:text="@={viewModel.civilIdText}"
+                android:textAlignment="viewStart"
+                android:textColor="@color/colorBlack"
+                android:textCursorDrawable="@color/colorBlack" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <FrameLayout
+            android:id="@+id/akamathopia_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/civil_id_TextInputLayout">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/akamathopia_TextInputLayout"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/akamathopia"
+                android:textColorHint="@color/colorGrayDark"
+                app:boxStrokeColor="@color/colorBlack"
+                app:boxStrokeWidth="0.8dp"
+                app:boxStrokeWidthFocused="0.8dp"
+
+                app:errorEnabled="false"
+                app:errorIconDrawable="@null"
+                app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                app:hintTextColor="@color/colorBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/civilIdTextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/akamathopia_TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:inputType="text"
+                    android:paddingEnd="35dp"
+                    android:singleLine="true"
+
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorBlack"
+                    android:textCursorDrawable="@color/colorBlack" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/akamathopia_uploadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginStart="20dp"
+
+                android:background="@null"
+                android:paddingStart="30dp"
+                android:clickable="@{!viewModel.loading}"
+                android:paddingEnd="30dp"
+                android:src="@drawable/upload_icon" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/statement_three_month_container"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.isPrivate?view.VISIBLE:view.GONE}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/akamathopia_container">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/statement_three_month_TextInputLayout"
+                android:enabled="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:hint="@string/three_month_bank_statement"
+                android:textColorHint="@color/colorGrayDark"
+                app:boxStrokeColor="@color/colorBlack"
+                app:boxStrokeWidth="0.8dp"
+                app:boxStrokeWidthFocused="0.8dp"
+
+                app:errorEnabled="false"
+                app:errorIconDrawable="@null"
+                app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                app:hintTextColor="@color/colorBlack"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/civilIdTextInputLayout">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/statement_three_month_TextInputEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:enabled="false"
+                    android:fontFamily="@font/cairo_regular"
+                    android:inputType="text"
+                    android:paddingEnd="35dp"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/colorBlack"
+                    android:textCursorDrawable="@color/colorBlack" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <ImageButton
+                android:id="@+id/statement_three_month_uploadImage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginStart="20dp"
+
+                android:background="@null"
+                android:paddingStart="30dp"
+                android:paddingEnd="30dp"
+                android:clickable="@{!viewModel.loading}"
+                android:src="@drawable/upload_icon" />
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/save_changes_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:clickable="@{!viewModel.loading}"
+            android:background="@drawable/filled_black"
+            android:fontFamily="@font/cairo_regular"
+            android:onClick="@{()->viewModel.requestBankCallback()}"
+            android:text="@string/request_call_back"
+            android:textColor="@color/colorWhite"
+            app:layout_constraintBottom_toBottomOf="parent" />
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="@{viewModel.loading?view.VISIBLE:view.GONE}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="isSelected"
+            type="java.lang.Boolean" />
+
+        <variable
+            name="brand"
+            type="com.kuwait.showroomz.model.simplifier.BrandSimplifier" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:holderBackground="@{isSelected}"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="2dp"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.PILL"
+                android:background="@drawable/filled_white"
+                android:imageUrl="@{brand.logo}" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/cairo_regular"
+                android:text="@{brand.name}"
+
+                android:textAllCaps="true"
+                android:textColor="@color/colorBlack" />
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

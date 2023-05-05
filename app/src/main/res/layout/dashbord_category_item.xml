@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="category"
+            type="com.kuwait.showroomz.model.simplifier.CategorySimplifier" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        >
+
+        <com.google.android.material.imageview.ShapeableImageView
+
+            android:id="@+id/category_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:tint="@{category.setBgColor()}"
+            android:background="@drawable/filled_white"
+            android:contentDescription="cat image"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.PILL"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:tint="@{category.setBgColor()}"
+            android:imageUrl="@{category.imgUrl}"
+            android:id="@+id/category_image_inside"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            app:layout_constraintBottom_toBottomOf="@+id/category_image"
+            app:layout_constraintEnd_toEndOf="@+id/category_image"
+            app:layout_constraintStart_toStartOf="@+id/category_image"
+            app:layout_constraintTop_toTopOf="@+id/category_image" />
+        <!-- android:background="@{category.bg(@drawable/round_background_gray)}"-->
+
+        <TextView
+            android:text="@{category.name}"
+            android:id="@+id/category_text"
+            android:textColor="@color/colorWhite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="1dp"
+            android:textSize="16sp"
+            android:fontFamily="@font/cairo_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/category_image"
+            app:layout_constraintStart_toStartOf="@+id/category_image"
+            app:layout_constraintTop_toBottomOf="@+id/category_image" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

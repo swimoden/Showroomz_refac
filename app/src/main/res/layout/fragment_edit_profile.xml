@@ -1,0 +1,443 @@
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viemModel"
+            type="com.kuwait.showroomz.viewModel.EditProfileVM" />
+
+        <variable
+            name="user"
+            type="com.kuwait.showroomz.model.simplifier.UserSimplifier" />
+    </data>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorWhite">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhite">
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/top_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:paddingBottom="30dp"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                    android:id="@+id/back_bnt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@null"
+                    android:padding="20dp"
+                    android:src="@mipmap/back_btn_white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/profile_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_bold"
+                    android:letterSpacing="0.05"
+                    android:paddingTop="15dp"
+                    android:text="@string/edit_profile"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/circle_white"
+                    android:elevation="10dp"
+                    android:imageUrlUser="@{user.image}"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar_"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/profile_txt"
+                    app:shapeAppearanceOverlay="@style/ShapeAppearance.Image.PILL" />
+
+                <TextView
+                    android:id="@+id/user_name_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/cairo_semi_bold"
+                    android:letterSpacing="0.05"
+                    android:text="@{user.fullName}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageView" />
+
+                <TextView
+                    android:id="@+id/email_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_regular"
+                    android:letterSpacing="0.05"
+                    android:text="@{user.email}"
+
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/user_name_txt" />
+
+                <TextView
+                    android:id="@+id/phone_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/cairo_regular"
+                    android:layoutDirection="ltr"
+                    android:letterSpacing="0.05"
+                    android:text="@{user.phone}"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/email_txt" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                app:layout_constraintTop_toBottomOf="@id/top_container">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nameTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="@string/name"
+                    android:textColorHint="@color/colorBlack"
+                    app:boxStrokeColor="@color/colorBlack"
+                    app:boxStrokeWidth="0.8dp"
+                    app:boxStrokeWidthFocused="0.8dp"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@null"
+                    app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                    app:hintTextColor="@color/colorBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+
+                    >
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nameTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:inputType="textPersonName"
+                        android:text="@={viemModel.name}"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/colorBlack"
+                        android:textCursorDrawable="@color/colorBlack" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/emailTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="@string/email_address"
+                    android:textColorHint="@color/colorBlack"
+                    app:boxBackgroundMode="outline"
+                    app:boxStrokeColor="@color/colorBlack"
+                    app:boxStrokeWidth="0.8dp"
+                    app:boxStrokeWidthFocused="0.8dp"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@null"
+                    app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                    app:hintTextColor="@color/colorBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/nameTextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/emailTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:inputType="textEmailAddress"
+                        android:text="@={viemModel.email}"
+                        android:textColor="@color/colorBlack"
+                        android:textAlignment="viewStart"
+                        android:textCursorDrawable="@color/colorBlack" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/phoneTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="@string/phone_number"
+                    android:textColorHint="@color/colorBlack"
+                    app:boxStrokeColor="@color/colorBlack"
+                    app:boxStrokeWidth="0.8dp"
+                    app:boxStrokeWidthFocused="0.8dp"
+                    app:errorEnabled="true"
+
+                    app:errorIconDrawable="@null"
+                    app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                    app:hintTextColor="@color/colorBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/emailTextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/phoneTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:inputType="number"
+                        android:text="@={viemModel.phone}"
+                        android:textColor="@color/colorBlack"
+                        android:textAlignment="viewStart"
+                        android:textCursorDrawable="@color/colorBlack" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/gender_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toBottomOf="@id/phoneTextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/dateOfBirthTextInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:hint="@string/dob"
+                        android:textColorHint="@color/colorBlack"
+                        app:boxStrokeColor="@color/colorBlack"
+                        app:boxStrokeWidth="0.8dp"
+                        app:boxStrokeWidthFocused="0.8dp"
+                        app:errorEnabled="true"
+
+                        app:errorIconDrawable="@null"
+                        app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                        app:hintTextColor="@color/colorBlack"
+
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.55">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/dobTextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:fontFamily="@font/cairo_regular"
+                            android:inputType="text"
+                            android:singleLine="false"
+                            android:text="@={viemModel.dateOfBirth}"
+                            android:textAlignment="viewStart"
+                            android:textColor="@color/colorBlack"
+                            android:textCursorDrawable="@color/colorBlack" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/date_container"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/dateOfBirthTextInputLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/genderTextInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="20dp"
+                        android:hint="@string/gender"
+                        android:textColorHint="@color/colorBlack"
+                        app:boxStrokeColor="@color/colorBlack"
+                        app:boxStrokeWidth="0.8dp"
+                        app:boxStrokeWidthFocused="0.8dp"
+                        app:errorEnabled="true"
+
+                        app:errorIconDrawable="@null"
+                        app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                        app:hintTextColor="@color/colorBlack"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintWidth_percent="0.32">
+
+                        <com.google.android.material.textfield.MaterialAutoCompleteTextView
+                            android:id="@+id/genderTextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="53dp"
+                            android:enabled="false"
+                            android:fontFamily="@font/cairo_regular"
+                            android:inputType="text"
+                            android:textColor="@color/colorBlack"
+                            android:textCursorDrawable="@color/colorBlack"
+                           />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/civilIdTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:hint="@string/civil_id_number"
+                    android:textColorHint="@color/colorBlack"
+                    app:boxStrokeColor="@color/colorBlack"
+                    app:boxStrokeWidth="0.8dp"
+                    app:boxStrokeWidthFocused="0.8dp"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@null"
+                    app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                    app:hintTextColor="@color/colorBlack"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/gender_container">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/civilIdTextInputEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:inputType="number"
+                        android:maxLength="12"
+                        android:text="@={viemModel.civilNumber}"
+                        android:textColor="@color/colorBlack"
+                        android:textAlignment="viewStart"
+                        android:textCursorDrawable="@color/colorBlack" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <FrameLayout
+                    android:id="@+id/upload_container"
+                    android:layout_width="0dp"
+                    android:layout_height="80dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/civilIdTextInputLayout">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/uploadTextInputLayout"
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginEnd="20dp"
+                        android:hint="@string/upload_license"
+                        android:textColorHint="@color/colorBlack"
+                        app:boxStrokeColor="@color/colorBlack"
+                        app:boxStrokeWidth="0.8dp"
+                        app:boxStrokeWidthFocused="0.8dp"
+
+                        app:errorEnabled="true"
+                        app:errorIconDrawable="@null"
+                        app:errorTextAppearance="@style/editTextErrorTextAppearance"
+                        app:hintTextColor="@color/colorBlack"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/civilIdTextInputLayout">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/uploadTextInputEditText"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:enabled="false"
+                            android:singleLine="true"
+                            android:fontFamily="@font/cairo_regular"
+                            android:inputType="text"
+                            android:paddingEnd="30dp"
+                            android:textColor="@color/colorBlack"
+                            android:textAlignment="viewStart"
+                            android:textCursorDrawable="@color/colorBlack" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <ImageButton
+                        android:id="@+id/uploadImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="40dp"
+                        android:layout_gravity="end"
+                        android:paddingEnd="30dp"
+                        android:paddingStart="30dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@null"
+                        android:src="@drawable/upload_icon" />
+                </FrameLayout>
+
+
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginEnd="20dp"
+                    android:background="@drawable/filled_black"
+                    android:fontFamily="@font/cairo_regular"
+                    android:onClick="@{()->viemModel.updateProfile()}"
+                    android:text="@string/save_changes"
+                    android:textAllCaps="true"
+                    android:textColor="@color/colorWhite"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/upload_container" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_circular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:theme="@style/progressColor"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

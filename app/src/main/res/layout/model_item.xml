@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="modelSimplifier"
+            type="com.kuwait.showroomz.model.simplifier.ModelSimplifier" />
+
+        <import type="android.text.TextUtils" />
+
+        <import
+            alias="v"
+            type="android.view.View" />
+        <variable
+            name="title"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cairo_bold"
+            android:text="@{title}"
+            android:textColor="@color/colorBlack"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:visibility="@{TextUtils.isEmpty(title) ? v.GONE : v.VISIBLE}"
+            android:layout_marginTop="5dp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            android:layout_marginStart="10dp"/>
+        <androidx.cardview.widget.CardView
+
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:background="@color/transparent"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="4dp"
+            app:layout_constraintTop_toBottomOf="@id/textView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/layout_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="6dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <com.google.android.material.imageview.ShapeableImageView
+
+                        android:id="@+id/shapeableImageView2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:imageUrl="@{modelSimplifier.image}"
+                        android:src="@drawable/place_holder"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitCenter"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintLeft_toLeftOf="parent"
+                        app:layout_constraintRight_toRightOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:shapeAppearanceOverlay="@style/roundedImageView"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"/>
+
+                    <TextView
+                        android:id="@+id/is_new_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/filled_red"
+                        android:fontFamily="@font/cairo_light"
+                        android:gravity="top|end"
+                        android:paddingStart="3dp"
+                        android:paddingEnd="3dp"
+                        android:layout_margin="5dp"
+
+                        android:visibility="gone"
+                        android:text="@string/new_arrival"
+                        android:textColor="@color/colorWhite"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/cairo_bold"
+                    android:text="@{modelSimplifier.name}"
+                    android:textColor="@color/colorBlack"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:visibility="@{TextUtils.isEmpty(modelSimplifier.name) ? v.GONE : v.VISIBLE}" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@{modelSimplifier.isPriceOffer? @drawable/filled_yellow : null}"
+                        android:fontFamily="@font/cairo_regular"
+                        android:paddingStart="3dp"
+                        android:paddingTop="1dp"
+                        android:paddingEnd="3dp"
+                        android:paddingBottom="1dp"
+                        android:visibility="@{TextUtils.isEmpty(modelSimplifier.price) ? v.INVISIBLE : v.VISIBLE}"
+                        android:text="@{modelSimplifier.isPriceOffer ? @string/offer_price : (modelSimplifier.brand.isBrand?@string/starting_price : @string/down_payment_ ) }"
+                        android:textColor="@{modelSimplifier.isPriceOffer? @color/colorWhite:@color/colorGrayDark}" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/cairo_regular"
+                        android:text="@{ ` `+modelSimplifier.price}"
+                        android:textColor="@color/colorGrayDark"
+                        android:textSize="16sp"
+                        android:visibility="@{TextUtils.isEmpty(modelSimplifier.price) ? v.GONE : v.VISIBLE}" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/has_offer_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="4dp"
+                        android:background="@{modelSimplifier.color}"
+                        android:fontFamily="@font/cairo_semi_bold"
+                        android:paddingStart="10dp"
+                        android:paddingTop="1dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="1dp"
+                        android:layout_marginTop="7dp"
+                        android:text="@{modelSimplifier.extra}"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="16sp"
+
+                        android:visibility="@{TextUtils.isEmpty(modelSimplifier.extra) ? v.GONE : v.VISIBLE}" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
