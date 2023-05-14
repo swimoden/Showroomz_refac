@@ -127,7 +127,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
 
     override fun onStop() {
         super.onStop()
-        viewModel.getDeviceActivityLogStop()
+        //viewModel.getDeviceActivityLogStop()
         Log.e(TAG, "onStop: 0")
     }
 

@@ -37,8 +37,8 @@ android {
         applicationId "com.kuwait.showroomz"
         minSdkVersion 23
         targetSdkVersion 33
-        versionName "5.1.1"
-        versionCode 303
+        versionName "5.1.4"
+        versionCode 306
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }

@@ -472,7 +472,7 @@ class ModelDetailFragment : Fragment() {
 
                 filtered[0].let { trim ->
                             selectedTrim = trim
-                            trim.colors.let { colors ->
+                            trim.colors?.let { colors ->
                                 trimsColorAdapter.refreshData(colors)
                                 binding.endArrow.isVisible = colors.size > 9
                                 binding.startArrow.isVisible = colors.size > 9
@@ -514,7 +514,7 @@ class ModelDetailFragment : Fragment() {
                         if (it.size > 0) {
                             it[0]?.let{ trim ->
                                 selectedTrim = trim
-                                    trim.colors.let { colors ->
+                                    trim.colors?.let { colors ->
                                     trimsColorAdapter.refreshData(colors)
                                     binding.endArrow.isVisible = colors.size > 9
                                     binding.startArrow.isVisible = colors.size > 9
@@ -765,10 +765,10 @@ class ModelDetailFragment : Fragment() {
 
                         trimsColorAdapter.refreshData(trims[tab.position].colors)
                         selectedTrim = enabledTrims[tab.position]
-                        binding.endArrow.isVisible =
-                            enabledTrims[tab.position].colors.size > 9
-                        binding.startArrow.isVisible =
-                            enabledTrims[tab.position].colors.size > 9
+                        binding.endArrow.isVisible = false
+                            //enabledTrims[tab.position].colors?.size > 9
+                        binding.startArrow.isVisible = false
+                            //enabledTrims[tab.position].colors.size > 9
                         if (enabledTrims[tab.position].price == 0) {
                             if (simplifier.price != "0" && simplifier.price != "") {
                                 model_price.text = simplifier.price

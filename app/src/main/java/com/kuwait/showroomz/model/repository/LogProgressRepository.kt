@@ -31,14 +31,14 @@ object LogProgressRepository {
         ads: String = "",
         bank: String = ""
     ) {
-        var url =
+        /*var url =
             API_URL + DEVICE_ACTIVITY_LOG_PROGRESS + "?serialNumber=${DeviceManger.getDeviceId()}" + "&screenName=${screenName}"
         if (category != "") url += "&category=${category}"
         if (dealerData != "") url += "&dealerData=${dealerData}"
         if (modelData != "") url += "&modelData=${modelData}"
         if (trim != "") url += "&trim=${trim}"
         if (ads != "") url += "&advertisement=${ads}"
-        if (bank != "") url += "&bank=${bank}"
+        if (bank != "") url += "&bank=${bank}"*/
         // url += "&_locale=${if (isEnglish)"en" else "ar"}"
         /*disposable.add(
             service.getDeviceActivityLogProgress(url)

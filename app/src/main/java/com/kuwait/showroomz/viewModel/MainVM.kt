@@ -72,12 +72,12 @@ class MainVM : ViewModel() {
         getSettings()// done
         paginLocation(0)
         //getAllTypes()// missing category
-        if (prefs.existKey(LAST_SESSION)) {
+        /*if (prefs.existKey(LAST_SESSION)) {
             getDeviceActivityLog(!isSameDay())
             Log.e(TAG, "LAST_SESSION: ${prefs.string(LAST_SESSION)}")
         } else {
             getDeviceActivityLog(true)
-        }
+        }*/
         if (prefs.existKey(FIRST_INSTALLATION)) {
             Log.e(TAG, "FIRST_INSTALLATION:${prefs.bool(FIRST_INSTALLATION)} ")
             if (!prefs.bool(FIRST_INSTALLATION)) {

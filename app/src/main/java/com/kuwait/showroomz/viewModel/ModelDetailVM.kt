@@ -445,6 +445,8 @@ fun setIsFavorite(){
         list?.let { it ->
             if (it.size > 0) {
                 trimsList.value = it
+            }else{
+                trimsLoading.value = true
             }
         } ?: kotlin.run {
             if (!NetworkUtils.instance.connected) {
@@ -471,17 +473,23 @@ fun setIsFavorite(){
                         }
                     }
                     override fun onNext(t: BaseListResponse<List<Trim>>) {
+                        trimsLoading.value = false
                         t.Result?.let {trims ->
-                            list?.let { it ->
-                                if (list.isEmpty()){
+                            trimsList.value = trims.filter { s -> s.isEnabled == true }
+                            saveTrim(trims, modelId)
+                            /*list?.let { it ->
+
+                                saveTrim(trims, modelId)
+                                //local.save(trims){}
+                                /*if (list.isEmpty()){
                                     saveTrim(trims, modelId)
                                 }else{
                                     local.save(trims){}
-                                }
+                                }*/
                             }?: kotlin.run {
                                 saveTrim(trims, modelId)
 
-                            }
+                            }*/
                         }?: kotlin.run {
                             empty.value = true
                         }
@@ -601,7 +609,7 @@ fun setIsFavorite(){
     }
     fun saveTrim(trims:List<Trim>,id: String ){
         local.save(trims){
-            trimsList.value = local.getAllByInt<Trim>("modelId", id.toInt())//?.filter { s -> s.isEnabled == true }
+           // trimsList.value = local.getAllByInt<Trim>("modelId", id.toInt())//?.filter { s -> s.isEnabled == true }
         }
     }
     fun saveOffers(trims:List<Offer>,id: String ){
