@@ -314,7 +314,7 @@ fun setIsFavorite(){
     fun saveModelToHistory(model: Model) {
 
         if (prefs.existKey(RECENTLY_VIEWED)) {
-            var recently = prefs.getList<Model>(RECENTLY_VIEWED)
+            val recently = prefs.getList<Model>(RECENTLY_VIEWED)
             Log.e(TAG, recently.indexOf(model).toString())
 
             for (i in 0 until recently.size) {
@@ -323,12 +323,11 @@ fun setIsFavorite(){
                     break
                 }
             }
-
             recently.add(0, model)
             prefs.removeKey(RECENTLY_VIEWED)
             prefs.setList(RECENTLY_VIEWED, recently)
         } else {
-            var recently = arrayListOf<Model>()
+            val recently = arrayListOf<Model>()
             recently.add(model)
             prefs.setList(RECENTLY_VIEWED, recently)
         }
@@ -411,18 +410,13 @@ fun setIsFavorite(){
                                 emptyGallery.value = true
                             }
                         }
-
                         override fun onError(e: Throwable) {
                             e.message?.let { Log.e("ModelDetailVM_ERROR", it) }
                             error.value = e.localizedMessage
                             loading.value = false
                             emptyGallery.value = true
                         }
-
-                        override fun onComplete() {
-
-                        }
-
+                        override fun onComplete() {}
                     })
             )
     }

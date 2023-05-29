@@ -891,7 +891,7 @@ class ModelDetailFragment : Fragment() {
             ShareCompat.IntentBuilder.from(requireActivity())
                 .setType("text/plain")
                 .setChooserTitle(txtToShare)
-                .setText("$txtToShare - https://prod.showroomz.com/md-${simplifier.slug}")
+                .setText("$txtToShare -${BASE_URL}Vehicle?id=${simplifier.id}")
                 .startChooser();
         }
         binding.favoriteImg.setOnClickListener {
