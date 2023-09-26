@@ -175,8 +175,6 @@ class CategoryVM : ViewModel() {
             }
             recentlyModel.value = filtredList
         }
-
-
     }
 
     fun setTranslationPrimaryKey(list: List<Category>, index: String = "0") {

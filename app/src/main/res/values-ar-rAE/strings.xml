@@ -341,6 +341,7 @@
     <string name="accept_conditions">الرجاء الموافقة</string>
     <string name="locations">مواقع</string>
     <string name="friday">الجمعة: %s</string>
+    <string name="friday_remove">الجمعة: </string>
     <string name="whhours"> %s الى %s</string>
     <string name="to"> الى </string>
     <string name="filter_error">ادخل خيار على الاقل لالفلترة</string>

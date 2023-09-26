@@ -14,6 +14,7 @@ import com.kuwait.showroomz.extras.Shared.Companion.modelsSimplifierList
 import com.kuwait.showroomz.extras.managers.DeviceManger
 import com.kuwait.showroomz.model.api.ApiService
 import com.kuwait.showroomz.model.data.*
+import com.kuwait.showroomz.model.local.AsyncDelete
 import com.kuwait.showroomz.model.local.LocalRepo
 import com.kuwait.showroomz.model.repository.LogProgressRepository
 import com.kuwait.showroomz.model.simplifier.CallbackRequest
@@ -66,18 +67,14 @@ class MainVM : ViewModel() {
 
     init {
         getDeletedObjects()
-        //fetchCategories()// done
-        //getAds()// done
-        //fetchAllAdsActions()// done
-        getSettings()// done
+        getSettings()
         paginLocation(0)
-        //getAllTypes()// missing category
-        /*if (prefs.existKey(LAST_SESSION)) {
+        if (prefs.existKey(LAST_SESSION)) {
             getDeviceActivityLog(!isSameDay())
             Log.e(TAG, "LAST_SESSION: ${prefs.string(LAST_SESSION)}")
         } else {
             getDeviceActivityLog(true)
-        }*/
+        }
         if (prefs.existKey(FIRST_INSTALLATION)) {
             Log.e(TAG, "FIRST_INSTALLATION:${prefs.bool(FIRST_INSTALLATION)} ")
             if (!prefs.bool(FIRST_INSTALLATION)) {
@@ -188,9 +185,10 @@ class MainVM : ViewModel() {
         )
     }
     private fun getDeletedObjects() {
+        val deleteClass = AsyncDelete()
         var url = "DeletedItems"
         if (shared.string("deleted_date") != null && shared.string("deleted_date") != "" ) {
-            url += "?deletedAt=${shared.string("deleted_date") }"
+            url += "?deletedAt=${shared.string("deleted_date")}"
         }
         disposable.add(
             service.getDeletedObj(url)
@@ -201,23 +199,23 @@ class MainVM : ViewModel() {
                         val x = getCurrentDateTime()
                         shared.setString("deleted_date",x.toStringDate())
                         obj.Result?.let {
-                            local.delete(Action::class.java,0, it.ActionIds)
-                            local.delete(BrandBasic::class.java,0, it.AgencyIds)
-                            local.delete(AppraisalInfo::class.java,0, it.AppraisalBrandIds)
-                            local.delete(AppraisalInfo::class.java,0, it.AppraisalModelIds)
-                            local.delete(CarOption::class.java,0, it.AppraisalVehicleOptionIds)
-                            local.delete(Bank::class.java,0, it.BankIds)
-                            local.delete(BrandBasic::class.java,0, it.BrandIds)
-                            local.delete(Category::class.java,0, it.CategoryIds)
-                            local.delete(Industry::class.java,0, it.IndustryIds)
-                            local.delete(Type::class.java,0, it.ModelTypeIds)
-                            local.delete(Service::class.java,0, it.ServiceIds)
-                            local.delete(Location::class.java,0, it.Showroomids)
-                            local.delete(Advertisement::class.java,0, it.AdvertisementIds)
-                            local.delete(Model::class.java,0, it.ModelDataIds)
-                            local.delete(Model::class.java,0, it.ModelIds)
-                            local.delete(Trim::class.java,0, it.TrimIds)
-                            local.delete(Offer::class.java,0, it.OfferIds)
+                            deleteClass.delete(Action::class.java,it.ActionIds)
+                            deleteClass.delete(BrandBasic::class.java, it.AgencyIds)
+                            deleteClass.delete(AppraisalInfo::class.java, it.AppraisalBrandIds)
+                            deleteClass.delete(AppraisalInfo::class.java, it.AppraisalModelIds)
+                            deleteClass.delete(CarOption::class.java, it.AppraisalVehicleOptionIds)
+                            deleteClass.delete(Bank::class.java, it.BankIds)
+                            deleteClass.delete(BrandBasic::class.java, it.BrandIds)
+                            deleteClass.delete(Category::class.java, it.CategoryIds)
+                            deleteClass.delete(Industry::class.java, it.IndustryIds)
+                            deleteClass.delete(Type::class.java, it.ModelTypeIds)
+                            deleteClass.delete(Service::class.java, it.ServiceIds)
+                            deleteClass.delete(Location::class.java, it.Showroomids)
+                            deleteClass.delete(Advertisement::class.java, it.AdvertisementIds)
+                            deleteClass.delete(Model::class.java, it.ModelDataIds)
+                            deleteClass.delete(Model::class.java, it.ModelIds)
+                            deleteClass.delete(Trim::class.java, it.TrimIds)
+                            deleteClass.delete(Offer::class.java, it.OfferIds)
                         }
                     }
 
@@ -232,15 +230,7 @@ class MainVM : ViewModel() {
 
 
     private fun saveToLocal(models: List<RealmObject>, url: String) {
-        local.save(models) {
-            if (it && models.isNotEmpty()) {
-                //val x = getCurrentDateTime()
-                //prefs.setString("${url}_updatedAt", x.toStringDate())
-            }
-            Log.e("saved", "$it --- --- $url ----- ${models.size}")
-
-        }
-        //getAds()
+        local.save(models) {}
     }
 
     private fun fetchAllActions() {
@@ -1058,4 +1048,5 @@ class MainVM : ViewModel() {
             }
         }
     }
+
 }

@@ -76,20 +76,22 @@ class ModelDetailVM : ViewModel() {
     val noConectionError = MutableLiveData<Boolean>(false)
     val verifyPhone = MutableLiveData<Boolean>(false)
     val emptyGallery = MutableLiveData<Boolean>()
-init {
-    if (prefs.existKey(USER_ID)) {
-        prefs.string(USER_ID)?.let {
-            local.getOne<User>(it)?.let {
-                user = it
-                fullNameField.set(user.fullName)
-                phoneNumber.set(user.phone?.number)
-                email.set(user.email)
-                civilId.set(user.civilID)
 
+    init {
+        if (prefs.existKey(USER_ID)) {
+            prefs.string(USER_ID)?.let {
+                local.getOne<User>(it)?.let {
+                    user = it
+                    fullNameField.set(user.fullName)
+                    phoneNumber.set(user.phone?.number)
+                    email.set(user.email)
+                    civilId.set(user.civilID)
+
+                }
             }
         }
     }
-}
+
     fun getUser() {
         if (prefs.existKey(USER_ID)) {
             prefs.string(USER_ID)?.let {
@@ -104,18 +106,19 @@ init {
             }
 
 
-
         }
     }
-fun setIsFavorite(){
-    if (prefs.existKey(USER_ID)) {
-        favoritesForUser = local.getAllByString<Favorite>("customerId", prefs.string(USER_ID)!!)
-        isFavorite.set(existModelInFavorite(favoritesForUser))
-    }else{
-        favoritesWithOutUser = local.getAllByString<Favorite>("customerId", "")!!
-        isFavorite.set(existModelInFavoriteWithOut(favoritesWithOutUser))
+
+    fun setIsFavorite() {
+        if (prefs.existKey(USER_ID)) {
+            favoritesForUser = local.getAllByString<Favorite>("customerId", prefs.string(USER_ID)!!)
+            isFavorite.set(existModelInFavorite(favoritesForUser))
+        } else {
+            favoritesWithOutUser = local.getAllByString<Favorite>("customerId", "")!!
+            isFavorite.set(existModelInFavoriteWithOut(favoritesWithOutUser))
+        }
     }
-}
+
     private fun existModelInFavoriteWithOut(list: MutableList<Favorite>?): Boolean {
         list?.forEach {
             if (it.modelData?.id == modelId) {
@@ -148,7 +151,7 @@ fun setIsFavorite(){
             error.value = ""
 
             localModel.let {
-                model.value  = it
+                model.value = it
             }
         }
 
@@ -175,9 +178,9 @@ fun setIsFavorite(){
 
                 })
         )
- }
+    }
 
-    fun getRemoteModelById( id: String,  action: (model: Model) -> (Unit)) {
+    fun getRemoteModelById(id: String, action: (model: Model) -> (Unit)) {
         loading.value = true
 
         val url = "$MODEL_DATAS_WITH_ID$id"
@@ -189,7 +192,7 @@ fun setIsFavorite(){
                     override fun onSuccess(pModel: Model) {
                         loading.value = false
                         action.invoke(pModel)
-                        local.saveObject(pModel){ }
+                        local.saveObject(pModel) { }
                     }
 
                     override fun onError(e: Throwable) {
@@ -202,7 +205,7 @@ fun setIsFavorite(){
         )
     }
 
-    fun getModelBySlug(id: String,  action: (model: Model) -> (Unit)){
+    fun getModelBySlug(id: String, action: (model: Model) -> (Unit)) {
         loading.value = true
         val url = "$MODEL_DATAS_WITH_SLUG$id"
         disposable.add(
@@ -212,13 +215,13 @@ fun setIsFavorite(){
                 .subscribeWith(object : DisposableSingleObserver<List<Model>>() {
                     override fun onSuccess(list: List<Model>) {
                         loading.value = false
-                       if (list.isNotEmpty()){
-                           action.invoke(list[0])
-                          // model.value = list[0]
-                           local.saveObject(list[0]){ }
-                       }else{
-                           error.value = context.getString(R.string.error_occurred)
-                       }
+                        if (list.isNotEmpty()) {
+                            action.invoke(list[0])
+                            // model.value = list[0]
+                            local.saveObject(list[0]) { }
+                        } else {
+                            error.value = context.getString(R.string.error_occurred)
+                        }
                     }
 
                     override fun onError(e: Throwable) {
@@ -230,7 +233,8 @@ fun setIsFavorite(){
                 })
         )
     }
-    fun getOffersByTrimID(id:String){
+
+    fun getOffersByTrimID(id: String) {
         val url = "$TRIM_OFFERS/$id"
         disposable.add(
             service.getOffersByTrimId(url)
@@ -242,7 +246,7 @@ fun setIsFavorite(){
                     override fun onError(e: Throwable) {
                         e.message?.let { Log.e("ModelDetailVM", it) }
                         //error.value = e.localizedMessage
-                       // loading.value = false
+                        // loading.value = false
                     }
 
                     override fun onNext(t: BaseListResponse<List<Offer>>) {
@@ -344,26 +348,26 @@ fun setIsFavorite(){
                 error.value = ""
                 videos.value = localImages.images
             } else {*/
-                /*disposable.add(
-                    service.getIVideos(id)
-                        .subscribeOn(Schedulers.newThread())
-                        .observeOn(AndroidSchedulers.mainThread())
-                        .subscribeWith(object : DisposableSingleObserver<VideoGallery>() {
-                            override fun onSuccess(gallery: VideoGallery) {
-                                loading.value = false
-                                if (gallery.images.isNotEmpty())
-                                    videos.value = gallery.images
+            /*disposable.add(
+                service.getIVideos(id)
+                    .subscribeOn(Schedulers.newThread())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribeWith(object : DisposableSingleObserver<VideoGallery>() {
+                        override fun onSuccess(gallery: VideoGallery) {
+                            loading.value = false
+                            if (gallery.images.isNotEmpty())
+                                videos.value = gallery.images
 //                                saveGallery(gallery, id)
-                            }
+                        }
 
-                            override fun onError(e: Throwable) {
-                                e.message?.let { Log.e("ModelDetailVM_ERROR", it) }
-                                error.value = e.localizedMessage
-                                loading.value = false
-                            }
+                        override fun onError(e: Throwable) {
+                            e.message?.let { Log.e("ModelDetailVM_ERROR", it) }
+                            error.value = e.localizedMessage
+                            loading.value = false
+                        }
 
-                        })
-                )*/
+                    })
+            )*/
 
             disposable.add(
                 service.getModelVideoById(id)
@@ -390,35 +394,37 @@ fun setIsFavorite(){
                     })
             )
 
-           // }
+            // }
         }
     }
 
     fun getModelGallery(id: String) {
         loading.value = true
-            disposable.add(
-                service.getImageById(id)
-                    .subscribeOn(Schedulers.newThread())
-                    .observeOn(AndroidSchedulers.mainThread())
-                    .subscribeWith(object : DisposableObserver<BaseListResponse<List<Image>>>() {
-                        override fun onNext(t: BaseListResponse<List<Image>>) {
-                            loading.value = false
-                            t.Result?.let {
-                                images.value = it
-                                emptyGallery.value = it.isEmpty()
-                            }?: kotlin.run {
-                                emptyGallery.value = true
-                            }
-                        }
-                        override fun onError(e: Throwable) {
-                            e.message?.let { Log.e("ModelDetailVM_ERROR", it) }
-                            error.value = e.localizedMessage
-                            loading.value = false
+        disposable.add(
+            service.getImageById(id)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribeWith(object : DisposableObserver<BaseListResponse<List<Image>>>() {
+                    override fun onNext(t: BaseListResponse<List<Image>>) {
+                        loading.value = false
+                        t.Result?.let {
+                            images.value = it
+                            emptyGallery.value = it.isEmpty()
+                        } ?: kotlin.run {
                             emptyGallery.value = true
                         }
-                        override fun onComplete() {}
-                    })
-            )
+                    }
+
+                    override fun onError(e: Throwable) {
+                        e.message?.let { Log.e("ModelDetailVM_ERROR", it) }
+                        error.value = e.localizedMessage
+                        loading.value = false
+                        emptyGallery.value = true
+                    }
+
+                    override fun onComplete() {}
+                })
+        )
     }
 
     private fun saveGallery(gallery: ModelGallery, id: String) {
@@ -434,12 +440,12 @@ fun setIsFavorite(){
 
     }
 
-    fun getTrimsByModelId( modelId: String) {
+    fun getTrimsByModelId(modelId: String) {
         val list = local.getAllByInt<Trim>("modelId", modelId.toInt())
         list?.let { it ->
             if (it.size > 0) {
                 trimsList.value = it
-            }else{
+            } else {
                 trimsLoading.value = true
             }
         } ?: kotlin.run {
@@ -466,9 +472,10 @@ fun setIsFavorite(){
                             empty.value = true
                         }
                     }
+
                     override fun onNext(t: BaseListResponse<List<Trim>>) {
                         trimsLoading.value = false
-                        t.Result?.let {trims ->
+                        t.Result?.let { trims ->
                             trimsList.value = trims.filter { s -> s.isEnabled == true }
                             saveTrim(trims, modelId)
                             /*list?.let { it ->
@@ -484,10 +491,11 @@ fun setIsFavorite(){
                                 saveTrim(trims, modelId)
 
                             }*/
-                        }?: kotlin.run {
+                        } ?: kotlin.run {
                             empty.value = true
                         }
                     }
+
                     override fun onComplete() {
                         getOffersByModelId(modelId)
                     }
@@ -497,8 +505,8 @@ fun setIsFavorite(){
 
     }
 
-    fun getOffersByModelId( modelId: String) {
-        val list = local.getAll<Offer>()?.filter { s -> s.modelDataIds.contains(modelId.toInt())  }
+    fun getOffersByModelId(modelId: String) {
+        val list = local.getAll<Offer>()?.filter { s -> s.modelDataIds.contains(modelId.toInt()) }
         list?.let { it ->
             if (it.isNotEmpty()) {
                 offersList.value = it.filter { s -> s.isEnabled == true }
@@ -527,29 +535,31 @@ fun setIsFavorite(){
                             empty.value = true
                         }
                     }
+
                     override fun onNext(t: BaseListResponse<List<Offer>>) {
-                        t.Result?.let {offers ->
-                           // list?.let { it ->
-                                saveOffers(offers, modelId)
-                           /* }?: kotlin.run {
-                                local.save(offers){}
-                            }*/
-                        }?: kotlin.run {
+                        t.Result?.let { offers ->
+                            // list?.let { it ->
+                            saveOffers(offers, modelId)
+                            /* }?: kotlin.run {
+                                 local.save(offers){}
+                             }*/
+                        } ?: kotlin.run {
                             empty.value = true
                         }
                     }
-                    override fun onComplete() { }
+
+                    override fun onComplete() {}
                 })
         )
 
 
     }
 
-    fun getTrims( modelId: String) {
+    fun getTrims(modelId: String) {
         trimsLoading.value = true
         val trimsFromLocal = local.getOne<TrimResponse>(modelId)
         if (!trimsFromLocal.isNull()) {
-            trimsFromLocal?.let {trims.value = it}
+            trimsFromLocal?.let { trims.value = it }
             trimsLoading.value = false
         } else {
             if (!NetworkUtils.instance.connected) {
@@ -601,16 +611,21 @@ fun setIsFavorite(){
 
 
     }
-    fun saveTrim(trims:List<Trim>,id: String ){
-        local.save(trims){
-           // trimsList.value = local.getAllByInt<Trim>("modelId", id.toInt())//?.filter { s -> s.isEnabled == true }
+
+    fun saveTrim(trims: List<Trim>, id: String) {
+        local.save(trims) {
+            // trimsList.value = local.getAllByInt<Trim>("modelId", id.toInt())//?.filter { s -> s.isEnabled == true }
         }
     }
-    fun saveOffers(trims:List<Offer>,id: String ){
-        local.save(trims){
-            offersList.value = local.getAll<Offer>()?.filter { s -> s.modelDataIds.contains(id.toInt())}?.filter { s -> s.isEnabled == true }
+
+    fun saveOffers(trims: List<Offer>, id: String) {
+        local.save(trims) {
+            offersList.value =
+                local.getAll<Offer>()?.filter { s -> s.modelDataIds.contains(id.toInt()) }
+                    ?.filter { s -> s.isEnabled == true }
         }
     }
+
     private fun saveTrims(response: TrimResponse, id: String, url: String) {
         local.saveObject(response) {
             trims.value = local.getOne(id)
@@ -660,27 +675,27 @@ fun setIsFavorite(){
 
 
         if (nameError.value == false && phoneError.value == false && civilIdError.value == false) {
-           /* var callback = CallbackWithOutUserRequest(
-                fullName = fullNameField.get().toString(),
-                phone = Phone("+965", phoneNumber.get().toString())
-            )
+            /* var callback = CallbackWithOutUserRequest(
+                 fullName = fullNameField.get().toString(),
+                 phone = Phone("+965", phoneNumber.get().toString())
+             )
 
-            if (prefs.existKey(USER_ID)) {
-                callback = CallbackRequest(
-                    fullName = fullNameField.get().toString(),
-                    phone = Phone("+965", phoneNumber.get().toString())
-                )
-                callback.client = prefs.string(USER_ID)
-            }
-            if (::modelId.isInitialized) {
-                callback.modelData = modelId
-            }
+             if (prefs.existKey(USER_ID)) {
+                 callback = CallbackRequest(
+                     fullName = fullNameField.get().toString(),
+                     phone = Phone("+965", phoneNumber.get().toString())
+                 )
+                 callback.client = prefs.string(USER_ID)
+             }
+             if (::modelId.isInitialized) {
+                 callback.modelData = modelId
+             }
 
-            if (isCivilIdMandatory.get()) {
-                callback.civilId = civilId.get()
-            }
-            callback.email = ""
-            callback.isKFH = isKfh.get()*/
+             if (isCivilIdMandatory.get()) {
+                 callback.civilId = civilId.get()
+             }
+             callback.email = ""
+             callback.isKFH = isKfh.get()*/
 
             val json = JsonObject()
             val phoneJson = JsonObject()
@@ -699,7 +714,7 @@ fun setIsFavorite(){
             json.addProperty("email", "")
             json.addProperty("isKFH", isKfh.get())
 
-           // Log.e(TAG, "requestCallback: $callback")
+            // Log.e(TAG, "requestCallback: $callback")
             callbackLoading.value = true
             disposable.add(
                 service.sendCallback(json)
@@ -709,7 +724,7 @@ fun setIsFavorite(){
                         override fun onSuccess(t: BaseResponse<Callback>) {
                             if (!prefs.existKey(USER_ID)) {
                                 t.Result?.client?.id?.let {
-                                    if(it != "") {
+                                    if (it != "") {
                                         prefs.setString(USER_ID, it)
                                         prefs.setString(TOKEN, it)
                                     }
@@ -759,11 +774,12 @@ fun setIsFavorite(){
                     .subscribeWith(object : DisposableSingleObserver<BaseResponse<Favorite>>() {
                         override fun onSuccess(obj: BaseResponse<Favorite>) {
                             callbackLoading.value = false
-                            obj.Result?.let{
+                            obj.Result?.let {
                                 saveFavorite(it)
                                 isFavorite.set(true)
                             }
                         }
+
                         override fun onError(e: Throwable) {
                             if (!NetworkUtils.instance.connected) {
                                 noConectionError.value = true

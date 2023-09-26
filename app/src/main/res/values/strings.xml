@@ -395,6 +395,7 @@
     <string name="accept_conditions">Please accept conditions</string>
     <string name="locations">Locations</string>
     <string name="friday">Friday: %s</string>
+    <string name="friday_remove">Friday: </string>
     <string name="whhours"> %s to %s</string>
     <string name="to"> to </string>
     <string name="filter_error">You have to  select one filter at least</string>

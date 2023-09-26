@@ -103,11 +103,11 @@ class ModelOffersFragment : Fragment() {
             simplifier.getOffers()?.let { it1 -> offersAdapter.refresh(it1, simplifier) }
              ModelOffersFragmentArgs.fromBundle(it).offers?.let {
                  viewModel.offers = it.toMutableList() as ArrayList<Offer>
-                 offersAdapter.refresh(viewModel.offers)
+                 offersAdapter.refresh(viewModel.offers, simplifier)
              }?: run {
                  viewModel.selectOffer?.let {
                      viewModel.offers.add(it)
-                     offersAdapter.refresh(viewModel.offers)
+                     offersAdapter.refresh(viewModel.offers, simplifier)
                  }
              }
             viewModel.modelId = simplifier.id

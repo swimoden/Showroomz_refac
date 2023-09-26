@@ -696,7 +696,7 @@ class MainActivity : AppCompatActivity(), NavController.OnDestinationChangedList
         } else if (action?.identifier == "test_drive") {
             val bundle = Bundle()
             bundle.putParcelable("model", simplifier.fetchModel())
-            bundle.putInt("atShowroom", 0)
+            bundle.putInt("atShowroom", 1)
             findNavController(this@MainActivity, R.id.fragment).navigate(
                 R.id.testDriveDateFragment,
                 bundle

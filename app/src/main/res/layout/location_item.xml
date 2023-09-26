@@ -53,7 +53,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_below="@id/working_hours"
-                android:text="@{location.formattedWorkingHours(5)}"
+                android:text="@{location.formattedWorkingHours(6)}"
                 />
 
             <LinearLayout

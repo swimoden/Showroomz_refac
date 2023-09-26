@@ -83,8 +83,6 @@ class YourCarDetailsFragment : Fragment() {
     val local = LocalRepo()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-
     }
 
     override fun onResume() {

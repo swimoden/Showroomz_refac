@@ -72,12 +72,11 @@ class LocalRepo(val realm: Realm = Realm.getDefaultInstance()) {
     }
 
     fun <T> delete(clazz: Class<T>, index: Int, array:ArrayList<Int>,  action: (newIndex: Int) -> (Unit)) where T : RealmObject? {
-
         realm.executeTransactionAsync({
             val result =
-                realm.where(clazz).equalTo("id", "${array[index]}").findAll()
+                it.where(clazz).equalTo("id", "${array[index]}").findAllAsync()
             result.deleteAllFromRealm()
-           realm.close()
+           it.close()
         },
             {
                 if (index < array.size -1){

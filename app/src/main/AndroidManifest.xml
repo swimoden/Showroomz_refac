@@ -78,7 +78,7 @@ android:name=""
             android:value="ae62033f-9e7b-4241-abbd-3104fe817bbf" />
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyBtK6Yw8j9lKkndPteePJEzAL5lnj13g_A" />
+            android:value="AIzaSyBPpi1S0ZrKOHv_keQmfYXrafJl6cpXoPs" />
 
         <provider
             android:authorities="@string/fb_provider_id"

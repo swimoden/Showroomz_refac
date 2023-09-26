@@ -65,12 +65,11 @@ class LocationSimplifier(private var location: Location) {
                                 toHour
                             )
                         }
-
                     }
                 }
             }
+            if (newDay == 6) whFormatted = String.format(context.resources.getString(R.string.friday), whFormatted)
         }
-        if (newDay == 5) whFormatted = String.format(context.resources.getString(R.string.friday), whFormatted)
         return whFormatted
     }
     /*fun formattedWorkingHours():String{
@@ -93,7 +92,10 @@ class LocationSimplifier(private var location: Location) {
         /*if (day==6){
             return array
         }*/
-        val value = formattedWorkingHours(day).replace(context.resources.getString(R.string.to), ":")
+        val value = formattedWorkingHours(day)
+            .replace(context.resources.getString(R.string.to), ":")
+            .replace(context.resources.getString(R.string.friday_remove),"")
+            .trim()
 
         if (!value.contains(":") ) {
             return array

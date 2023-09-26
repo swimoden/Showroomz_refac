@@ -166,8 +166,6 @@ class ModelDetailFragment : Fragment() {
         binding =
             DataBindingUtil.inflate(inflater, R.layout.fragment_model_details, container, false)
         binding.root.layoutDirection = View.LAYOUT_DIRECTION_LOCALE
-
-
         return binding.root
     }
 
