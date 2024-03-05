@@ -48,53 +48,10 @@ class ApiService {
         ConnectionSpec.CLEARTEXT
     )
 
-
-    /* private fun provideOkHttpClient(): OkHttpClient {
-         val loggingInterceptor = HttpLoggingInterceptor()
-         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-         val httpClient = OkHttpClient.Builder()
-             .connectTimeout(5, TimeUnit.MINUTES)
-             .writeTimeout(5, TimeUnit.MINUTES)
-             .readTimeout(5, TimeUnit.MINUTES)
- //            .connectionSpecs(specs)
- //            .addInterceptor(loggingInterceptor)
-             .connectionSpecs(Arrays.asList(ConnectionSpec.MODERN_TLS, ConnectionSpec.CLEARTEXT))
-
- //            .connectionSpecs(Collections.singletonList(spec))
-         httpClient.networkInterceptors().add(Interceptor { chain ->
-             val requestBuilder = chain.request().newBuilder()
-             requestBuilder.header(DEVICE_ID, DeviceManger.getDeviceId())
-             chain.proceed(requestBuilder.build())
-         })
-         httpClient.networkInterceptors().add(loggingInterceptor)
-        return httpClient.build()
-       /*  return OkHttpClient.Builder()
-             .connectTimeout(5, TimeUnit.MINUTES)
-             .writeTimeout(5, TimeUnit.MINUTES)
-             .readTimeout(5, TimeUnit.MINUTES)
- //            .connectionSpecs(specs)
-             .connectionSpecs(Arrays.asList(ConnectionSpec.MODERN_TLS, ConnectionSpec.CLEARTEXT))
- //            .connectionSpecs(Collections.singletonList(spec))
-             .addInterceptor(httpClient)
-             .build()*/
-
-     }
-
-
-
-     private val api = Retrofit.Builder()
-         .baseUrl(API_URL)
-         //.addConverterFactory(GsonConverterFactory.create(gson))
-         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-         //.client(provideOkHttpClient())
-         .build()
-         .create(Api::class.java)*/
-
-
     private fun provideOkHttpClient(): OkHttpClient {
         val loggingInterceptor = HttpLoggingInterceptor()
         loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
-        return OkHttpClient.Builder()//.sslSocketFactory(context.socketFactory)
+        return OkHttpClient.Builder()
             .connectionSpecs(specs)
             .callTimeout(5, TimeUnit.MINUTES)
             .writeTimeout(5, TimeUnit.MINUTES)

@@ -33,19 +33,15 @@ class TrimSpecAdapter(
 ) :
     RecyclerView.Adapter<TrimSpecAdapter.SpecViewHolder>() {
     var isArabic = !isEnglish
-
     inner class SpecViewHolder(var view: TrimSpecItemBinding) : RecyclerView.ViewHolder(view.root) {
         fun bind(spec: Spec?) {
             view.s = spec?.let { SpecSimplifier(it) }
             if (isArabic)
-
                 view.specType.textAlignment =
                     if (Locale.getDefault().language == "ar") TEXT_ALIGNMENT_VIEW_START else TEXT_ALIGNMENT_VIEW_END
             else if (Locale.getDefault().language == "ar") TEXT_ALIGNMENT_VIEW_END else TEXT_ALIGNMENT_VIEW_START
 
-
             spec?.contents?.forEach { labelText ->
-
                 val parent = ConstraintLayout(context)
                 parent.layoutParams =
                     ConstraintLayout.LayoutParams(
@@ -106,8 +102,8 @@ class TrimSpecAdapter(
                         }
 
                         valueTV.setPadding(15, 15, 15, 0)
-                        if ((labelText.isMultiple==true&&labelText.isChecked==true)||labelText.isMultiple==false)
-                        parent.addView(valueTV)
+                        if ((labelText.isMultiple == true && labelText.isChecked == true) || labelText.isMultiple == false)
+                            parent.addView(valueTV)
                     }
                 }
                 if (labelText.isChoice == true && labelText.isMultiple!!) {
@@ -203,65 +199,23 @@ class TrimSpecAdapter(
                         }
                     }
                 }
-
                 view.specContentContainer.addView(parent)
             }
         }
-
-
     }
-
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SpecViewHolder {
-
         return SpecViewHolder(
             TrimSpecItemBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
             )
-
         )
-
     }
-
     override fun getItemCount(): Int {
         return spec.size
     }
-
     override fun onBindViewHolder(holder: SpecViewHolder, position: Int) {
-
           holder.bind(spec[position])
-
-
-
     }
-
-   /* private fun redirectionRtl(): Boolean {
-        var isArabic = false
-        if (spec.isNotEmpty()) {
-            spec.forEach { it ->
-                it.contents.forEach {
-                    if (it.translations != null)
-                        if (TrimTranslationSimplifier(
-                                it.translations ?: Translation()
-                            ).isArabicValue
-                        ) {
-                            isArabic = true
-                            return@forEach
-                        }
-                }
-            }
-            if (!isArabic)
-                spec.forEach {
-                    if (SpecSimplifier(it).isArabicName!!) {
-                        isArabic = true
-                        return@forEach
-                    }
-
-                }
-        }
-
-        return isArabic
-    }*/
 }

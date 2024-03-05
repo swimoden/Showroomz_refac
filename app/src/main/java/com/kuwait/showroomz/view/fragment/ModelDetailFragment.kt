@@ -543,8 +543,8 @@ class ModelDetailFragment : Fragment() {
                     offers_container.visibility = View.VISIBLE
 
                 }
-                if(::selectedTrim.isInitialized)
-                viewModel.getOffersByTrimID(selectedTrim.id)
+                if (::selectedTrim.isInitialized)
+                    viewModel.getOffersByTrimID(selectedTrim.id)
             }
         })
         viewModel.offers.observe(viewLifecycleOwner, Observer { offers ->
@@ -858,10 +858,7 @@ class ModelDetailFragment : Fragment() {
             interior_layout.isVisible = true
             red_interior_button.isVisible = true
             binding.interiorWebView.settings.setRenderPriority(WebSettings.RenderPriority.HIGH)
-            //binding.interiorWebView.settings.setAppCacheMaxSize(5 * 1024 * 1024) // 5MB
-            //binding.interiorWebView.settings.setAppCachePath(context?.cacheDir?.absolutePath)
             binding.interiorWebView.settings.allowFileAccess = true
-            //binding.interiorWebView.settings.setAppCacheEnabled(true)
             binding.interiorWebView.settings.cacheMode = WebSettings.LOAD_DEFAULT
             binding.interiorWebView.settings.javaScriptEnabled = true
             if (!NetworkUtils.instance.connected) {  // loading offline

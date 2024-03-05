@@ -25,7 +25,6 @@ import com.kuwait.showroomz.R
 import com.kuwait.showroomz.databinding.CallbackSuccessBottomSheetBinding
 import com.kuwait.showroomz.databinding.FragmentContactUsBinding
 import com.kuwait.showroomz.extras.CONTACT_EMAIL
-import com.kuwait.showroomz.extras.CONTACT_NUMBER
 import com.kuwait.showroomz.extras.DesignUtils
 import com.kuwait.showroomz.extras.PermissionUtils
 import com.kuwait.showroomz.model.data.Setting

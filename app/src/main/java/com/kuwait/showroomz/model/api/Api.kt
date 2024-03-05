@@ -20,9 +20,7 @@ interface Api {
 
     @GET
     fun getBrandsByCategoryId(
-
         @Url url: String
-
     ): Single<BaseListResponse<List<Brand>>>
 
     @GET
